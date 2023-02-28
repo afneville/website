@@ -1,0 +1,5 @@
+#+TITLE: My Start Page
+#+AUTHOR: Alexander Neville
+#+DATE: [2023-02-28 Tue]
+
+A /start page/ is a type of splash screen, containing a selection of useful links and other pieces of information, often displayed when a browser is opened or a new tab is loaded. Many browsers provide some form of start page by default, though these are rarely nice to use or look at. A live version of my personal start page can be seen [[https://alexneville.co.uk/start.html][here]].

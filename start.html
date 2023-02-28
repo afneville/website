@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Start</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.alexneville.co.uk/fontawesome/css/all.min.css" />
+    <link rel="icon" href="https://cdn.alexneville.co.uk/res/site_logo.svg"/>
+    <!-- <link -->
+    <!--   rel="stylesheet" -->
+    <!--   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" -->
+    <!-- /> -->
+    <style>
+      @font-face {
+        font-family: IBMPlexMono;
+        src: url("https://cdn.alexneville.co.uk/fonts/IBMPlexMono.ttf") format("truetype");
+      }
+      :root {
+        --fg: #000000;
+        --fg-dark: #999999;
+        --fg-accent: #cdcdcd;
+        --bg: #ffffff;
+        --bg-accent: #f9f9fb;
+        --blue: #80a1e4;
+      }
+      body {
+        margin: 0;
+        font-family: IBMPlexMono;
+        display: flex;
+        align-items: center;
+        min-height: 100vh
+      }
+      i {
+        font-size: 1.5em;
+      }
+      #grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1em;
+      }
+
+      .content-width {
+        width: calc(100vw - 2em);
+        max-width: 75ch;
+        margin-inline: auto;
+        padding: 1em;
+      }
+
+      .card {
+        border: 1px solid var(--fg-accent);
+        border-radius: 1em;
+        padding: 0.25em;
+      }
+
+      .card:hover {
+        background-color: var(--bg-accent);
+        border-color: var(--fg-dark);
+      }
+
+      @media (hover: none) {
+        .card:hover {
+          background-color: var(--bg);
+          border-color: var(--fg-accent);
+        }
+      }
+
+      .card a {
+        display: flex;
+        align-items: center;
+        margin: 1em 0;
+      }
+
+      a,
+      a:link {
+        outline: none;
+        text-decoration: none;
+        color: var(--fg);
+      }
+
+      a:visited {
+        text-decoration: none;
+      }
+
+      a:focus p {
+        text-decoration: underline;
+      }
+
+      a:hover p {
+        text-decoration: underline;
+      }
+
+      @media (hover: none) {
+        a:hover p {
+          text-decoration: none;
+        }
+      }
+
+      a:active p {
+        text-decoration: underline;
+      }
+
+      a i {
+        width: 3rem;
+        text-align: center;
+      }
+
+      #news i,
+      #search i,
+      #docs i {
+        font-size: 1.25em;
+      }
+      a p {
+        margin: 0;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      * {
+        line-height: 1.5;
+      }
+      </style>
+  </head>
+  <body>
+      <div id="grid" class="content-width">
+        <div id="development" class="card">
+          <ul>
+            <li>
+              <a href="https://github.com"
+              ><i class="fa-brands fa-github"></i>
+                <p>Github</p></a
+              >
+            </li>
+            <li>
+              <a href="https://stackoverflow.com"
+              ><i class="fa-brands fa-stack-overflow"></i>
+                <p>Stack Overflow</p></a
+              >
+            </li>
+            <li>
+              <a href="https://console.aws.amazon.com"
+              ><i class="fa-brands fa-aws"></i>
+                <p>AWS</p></a
+              >
+            </li>
+            <li>
+              <a href="https://cloud.oracle.com"
+              ><i style="font-size: 1.25em" class="fa-solid fa-cloud"></i>
+                <p>OCI</p></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div id="university" class="card">
+          <ul>
+            <li>
+              <a href="https://www.birmingham.ac.uk"
+              ><i
+                  style="font-size: 1.25em"
+                  class="fa-solid fa-graduation-cap"
+                ></i>
+                <p>University</p></a
+              >
+            </li>
+            <li>
+              <a href="https://intranet.birmingham.ac.uk/student"
+              ><i class="fa-solid fa-info"></i>
+                <p>Intranet</p></a
+              >
+            </li>
+            <li>
+              <a href="https://canvas.bham.ac.uk"
+              ><i
+                  style="font-size: 1.25em"
+                  class="fa-solid fa-chalkboard-user"
+                ></i>
+                <p>VLE</p></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div id="news" class="card">
+          <ul>
+            <li>
+              <a href="https://www.thetimes.co.uk"
+              ><i class="fa-solid fa-t"></i>
+                <p>The Times</p></a
+              >
+            </li>
+            <li>
+              <a href="https://www.theguardian.com/uk"
+              ><i class="fa-solid fa-g"></i>
+                <p>The Guardian</p></a
+              >
+            </li>
+            <li>
+              <a href="https://www.bbc.co.uk/news"
+              ><i class="fa-solid fa-b"></i>
+                <p>BBC News</p></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div id="personal" class="card">
+          <ul>
+            <li>
+              <a href="https://my.1password.com/signin"
+              ><i style="font-size: 1.25em" class="fa-solid fa-key"></i>
+                <p>Passwords</p></a
+              >
+            </li>
+            <li>
+              <a href="https://mail.google.com"
+              ><i class="fa-regular fa-envelope"></i>
+                <p>Mail</p></a
+              >
+            </li>
+            <li><a href="https://alexneville.co.uk"><i class="fa-regular fa-user"></i> Home</a></li>
+          </ul>
+        </div>
+        <div id="social" class="card">
+          <ul>
+            <li>
+              <a
+                href="https://discord.com/app"
+                style="display: flex; align-items: center"
+              ><i style="font-size: 1.25em" class="fa-brands fa-discord"></i>
+                <p>Discord</p></a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com/"
+              ><i class="fa-brands fa-instagram"></i>
+                <p>Instagram</p></a
+              >
+            </li>
+            <li>
+              <a href="https://web.snapchat.com/"
+              ><i class="fa-brands fa-snapchat"></i>
+                <p>Snapchat</p></a
+              >
+            </li>
+            <li>
+              <a href="https://web.whatsapp.com/"
+              ><i class="fa-brands fa-whatsapp"></i>
+                <p>Whatsapp</p></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div id="entertainment" class="card">
+          <ul>
+            <li>
+              <a href="https://www.youtube.com"
+              ><i class="fa-brands fa-whatsapp"></i>
+                <p>Youtube</p></a
+              >
+            </li>
+            <li>
+              <a href="https://www.reddit.com"
+              ><i class="fa-brands fa-reddit-alien"></i>
+                <p>Reddit</p></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div id="docs" class="card">
+          <ul>
+            <li>
+              <a href="https://learnxinyminutes.com/"
+              ><i class="fa-solid fa-hourglass-half"></i>
+                <p>LearnXinY</p></a
+              >
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/"
+              ><i class="fa-solid fa-code"></i>
+                <p>MDN Web Docs</p></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div id="docs" class="card">
+          <ul>
+            <li>
+              <a href="https://wiki.archlinux.org/"
+              ><i class="fa-brands fa-linux"></i>
+                <p>Arch Wiki</p></a
+              >
+            </li>
+            <li>
+              <a href="https://wiki.gentoo.org/wiki/Main_Page"
+              ><i class="fa-brands fa-linux"></i>
+                <p>Gentoo Wiki</p></a
+              >
+            </li>
+            <li>
+              <a href="https://wiki.debian.org/"
+              ><i class="fa-brands fa-linux"></i>
+                <p>Debian Wiki</p></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div id="search" class="card">
+          <ul>
+            <li>
+              <a href="https://www.google.com/"
+              ><i class="fa-brands fa-google"></i>
+                <p>Google</p></a
+              >
+            </li>
+            <li>
+              <a href="https://duckduckgo.com/"
+              ><i class="fa-solid fa-user-secret"></i>
+                <p>DuckDuckGo</p></a
+              >
+            </li>
+            <li>
+              <a href="https://www.wikipedia.org/"
+              ><i class="fa-brands fa-wikipedia-w"></i>
+                <p>Wikipedia</p></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+  </body>
+</html>
