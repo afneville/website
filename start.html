@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.alexneville.co.uk/fontawesome/css/all.min.css" />
     <link rel="icon" href="https://cdn.alexneville.co.uk/res/site_logo.svg"/>
-    <!-- <link -->
-    <!--   rel="stylesheet" -->
-    <!--   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" -->
-    <!-- /> -->
     <style>
       @font-face {
         font-family: IBMPlexMono;
@@ -36,6 +32,7 @@
       #grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-auto-rows: 1fr;
         gap: 1em;
       }
 
@@ -50,6 +47,13 @@
         border: 1px solid var(--fg-accent);
         border-radius: 1em;
         padding: 0.25em;
+        display: flex;
+        align-items: center;
+      }
+
+      ul {
+        margin-top: 0;
+        margin-bottom: 0;
       }
 
       .card:hover {
@@ -253,8 +257,8 @@
           <ul>
             <li>
               <a href="https://www.youtube.com"
-              ><i class="fa-brands fa-whatsapp"></i>
-                <p>Youtube</p></a
+              ><i style="font-size:1.25em;" class="fa-brands fa-youtube"></i>
+                <p>YouTube</p></a
               >
             </li>
             <li>
@@ -315,6 +319,12 @@
               <a href="https://duckduckgo.com/"
               ><i class="fa-solid fa-user-secret"></i>
                 <p>DuckDuckGo</p></a
+              >
+            </li>
+            <li>
+              <a href="https://search.brave.com/"
+              ><i class="fa-solid fa-magnifying-glass"></i>
+                <p>Brave</p></a
               >
             </li>
             <li>
