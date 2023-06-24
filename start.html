@@ -1,352 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="system-theme">
   <head>
     <title>Start</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
-      href="https://cdn.alexneville.co.uk/fontawesome/css/all.min.css" />
-    <link rel="icon" href="https://cdn.alexneville.co.uk/res/site_logo.svg" />
-    <style>
-      @font-face {
-        font-family: IBMPlexMono;
-        src: url("https://cdn.alexneville.co.uk/fonts/IBMPlexMono.ttf")
-          format("truetype");
-      }
-      :root {
-        --fg: #000000;
-        --fg-dark: #999999;
-        --fg-accent: #cdcdcd;
-        --bg: #ffffff;
-        --bg-accent: #f9f9fb;
-        --blue: #80a1e4;
-      }
-      body {
-        margin: 0;
-        font-family: IBMPlexMono;
-        display: flex;
-        align-items: center;
-        min-height: 100vh;
-      }
-      i {
-        font-size: 1.5em;
-      }
-      #grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-auto-rows: 1fr;
-        gap: 1em;
-      }
-
-      .content-width {
-        width: calc(100vw - 2em);
-        max-width: 75ch;
-        margin-inline: auto;
-        padding: 1em;
-      }
-
-      .card {
-        border: 1px solid var(--fg-accent);
-        border-radius: 1em;
-        padding: 0.25em;
-        display: flex;
-        align-items: center;
-      }
-
-      ul {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-
-      .card:hover {
-        background-color: var(--bg-accent);
-        border-color: var(--fg-dark);
-      }
-
-      @media (hover: none) {
-        .card:hover {
-          background-color: var(--bg);
-          border-color: var(--fg-accent);
-        }
-      }
-
-      .card a {
-        display: flex;
-        align-items: center;
-        margin: 1em 0;
-      }
-
-      a,
-      a:link {
-        outline: none;
-        text-decoration: none;
-        color: var(--fg);
-      }
-
-      a:visited {
-        text-decoration: none;
-      }
-
-      a:focus p {
-        text-decoration: underline;
-      }
-
-      a:hover p {
-        text-decoration: underline;
-      }
-
-      @media (hover: none) {
-        a:hover p {
-          text-decoration: none;
-        }
-      }
-
-      a:active p {
-        text-decoration: underline;
-      }
-
-      a i {
-        width: 3rem;
-        text-align: center;
-      }
-
-      #news i,
-      #search i,
-      #docs i {
-        font-size: 1.25em;
-      }
-      a p {
-        margin: 0;
-      }
-
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-      * {
-        line-height: 1.5;
-      }
-    </style>
+      href="https://cdn.alexneville.co.uk/nerd-fonts/nerd-fonts.css" />
+    <link
+      rel="icon"
+      href="https://cdn.alexneville.co.uk/res/panda.png" />
+    <link href="/res/start.css" rel="stylesheet" />
+    <script src="/res/script.js" defer></script>
   </head>
   <body>
-    <div id="grid" class="content-width">
-      <div id="development" class="card">
+    <header>
+    </header>
+    <main id="grid" class="content-width">
+      <section id="development" class="card">
+        <h3>Development</h3>
+        <hr />
         <ul>
           <li>
-            <a href="https://github.com">
-              <i class="fa-brands fa-github"></i>
-              <p>Github</p>
+            <i class="nf nf-md-github"></i>
+            <p>Github</p>
+            <a href="https://github.com/alexanderneville">
+              <span></span>
             </a>
           </li>
+
           <li>
-            <a href="https://stackoverflow.com">
-              <i class="fa-brands fa-stack-overflow"></i>
-              <p>Stack Overflow</p>
-            </a>
+            <i class="nf nf-md-aws"></i>
+            <p>AWS</p>
+            <a href="https://console.aws.amazon.com"><span></span></a>
           </li>
           <li>
-            <a href="https://console.aws.amazon.com">
-              <i class="fa-brands fa-aws"></i>
-              <p>AWS</p>
-            </a>
-          </li>
-          <li>
-            <a href="https://cloud.oracle.com">
-              <i style="font-size: 1.25em" class="fa-solid fa-cloud"></i>
-              <p>OCI</p>
-            </a>
+            <i class="nf nf-oct-cloud"></i>
+            <p>OCI</p>
+            <a href="https://cloud.oracle.com"><span></span></a>
           </li>
         </ul>
-      </div>
-      <div id="university" class="card">
+      </section>
+
+      <section id="personal" class="card">
+        <h3>Personal</h3>
+        <hr />
         <ul>
           <li>
-            <a href="https://www.birmingham.ac.uk">
-              <i
-                style="font-size: 1.25em"
-                class="fa-solid fa-graduation-cap"></i>
-              <p>University</p>
-            </a>
+            <i class="nf nf-oct-key"></i>
+            <p>Passwords</p>
+            <a href="https://my.1password.com/signin"><span></span></a>
           </li>
           <li>
-            <a href="https://intranet.birmingham.ac.uk/student">
-              <i class="fa-solid fa-info"></i>
-              <p>Intranet</p>
-            </a>
+            <i class="nf nf-oct-mail"></i>
+            <p>Mail</p>
+            <a href="https://mail.proton.me"><span></span></a>
           </li>
           <li>
-            <a href="https://canvas.bham.ac.uk">
-              <i
-                style="font-size: 1.25em"
-                class="fa-solid fa-chalkboard-user"></i>
-              <p>VLE</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div id="personal" class="card">
-        <ul>
-          <li>
-            <a href="https://my.1password.com/signin">
-              <i style="font-size: 1.25em" class="fa-solid fa-key"></i>
-              <p>Passwords</p>
-            </a>
-          </li>
-          <li>
-            <a href="https://mail.proton.me">
-              <i class="fa-regular fa-envelope"></i>
-              <p>Mail</p>
-            </a>
-          </li>
-          <li>
-            <a href="https://nc.alexneville.co.uk">
-              <i class="fa-regular fa-file"></i>
-              Files
-            </a>
-          </li>
-          <li>
-            <a href="https://alexneville.co.uk">
-              <i class="fa-regular fa-user"></i>
-              Home
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div id="news" class="card">
-        <ul>
-          <li>
-            <a href="https://www.thetimes.co.uk">
-              <i class="fa-solid fa-t"></i>
-              <p>The Times</p>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.theguardian.com/uk">
-              <i class="fa-solid fa-g"></i>
-              <p>The Guardian</p>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bbc.co.uk/news">
-              <i class="fa-solid fa-b"></i>
-              <p>BBC News</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div id="social" class="card">
-        <ul>
-          <li>
+            <i class="nf nf-oct-file"></i>
+            <p>Files</p>
             <a
-              href="https://discord.com/app"
-              style="display: flex; align-items: center">
-              <i style="font-size: 1.25em" class="fa-brands fa-discord"></i>
-              <p>Discord</p>
+              href="https://cloud.alexneville.co.uk/index.php/apps/files/">
+              <span></span>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/">
-              <i class="fa-brands fa-instagram"></i>
-              <p>Instagram</p>
-            </a>
-          </li>
-          <li>
-            <a href="https://web.snapchat.com/">
-              <i class="fa-brands fa-snapchat"></i>
-              <p>Snapchat</p>
-            </a>
-          </li>
-          <li>
-            <a href="https://web.whatsapp.com/">
-              <i class="fa-brands fa-whatsapp"></i>
-              <p>Whatsapp</p>
+            <i class="nf nf-oct-image"></i>
+            <p>Photos</p>
+            <a
+              href="https://cloud.alexneville.co.uk/index.php/apps/memories">
+              <span></span>
             </a>
           </li>
         </ul>
-      </div>
-      <div id="entertainment" class="card">
+      </section>
+
+      <section id="news" class="card">
+        <h3>News</h3>
+        <hr />
         <ul>
           <li>
-            <a href="https://www.youtube.com">
-              <i style="font-size: 1.25em" class="fa-brands fa-youtube"></i>
-              <p>YouTube</p>
-            </a>
+            <i class="nf nf-md-format_text"></i>
+            <p>The Times</p>
+            <a href="https://www.thetimes.co.uk"><span></span></a>
           </li>
           <li>
-            <a href="https://www.reddit.com">
-              <i class="fa-brands fa-reddit-alien"></i>
-              <p>Reddit</p>
-            </a>
+            <i class="nf nf-md-newspaper_variant_outline"></i>
+            <p>The Guardian</p>
+            <a href="https://www.theguardian.com/uk"><span></span></a>
+          </li>
+          <li>
+            <i class="nf nf-md-web"></i>
+            <p>BBC News</p>
+            <a href="https://www.bbc.co.uk/news"><span></span></a>
           </li>
         </ul>
-      </div>
-      <div id="docs" class="card">
+      </section>
+
+      <section id="entertainment" class="card">
+        <h3>Entertainment</h3>
+        <hr />
         <ul>
           <li>
-            <a href="https://learnxinyminutes.com/">
-              <i class="fa-solid fa-hourglass-half"></i>
-              <p>LearnXinY</p>
+            <i class="nf nf-oct-video"></i>
+            <p>YouTube</p>
+            <a href="https://www.youtube.com"><span></span></a>
+          </li>
+          <li>
+            <i class="nf nf-md-music"></i>
+            <p>Spotify</p>
+            <a href="https://spotify.com"><span></span></a>
+          </li>
+          <li>
+            <i class="nf nf-fa-keyboard_o"></i>
+            <p>MonkeyType</p>
+            <a href="https://www.monkeytype.com"><span></span></a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="social" class="card">
+        <h3>Social</h3>
+        <hr />
+        <ul>
+          <li>
+            <i class="nf nf-fa-instagram"></i>
+            <p>Instagram</p>
+            <a href="https://www.instagram.com/"><span></span></a>
+          </li>
+          <li>
+            <i class="nf nf-md-snapchat"></i>
+            <p>Snapchat</p>
+            <a href="https://web.snapchat.com/"><span></span></a>
+          </li>
+          <li>
+            <i class="nf nf-fa-whatsapp"></i>
+            <p>WhatsApp</p>
+            <a href="https://web.whatsapp.com/"><span></span></a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="university" class="card">
+        <h3>University</h3>
+        <hr />
+        <ul>
+          <li>
+            <i class="nf nf-oct-mortar_board"></i>
+            <p>Home</p>
+            <a href="https://www.birmingham.ac.uk"><span></span></a>
+          </li>
+          <li>
+            <i class="nf nf-oct-info"></i>
+            <p>Intranet</p>
+            <a href="https://intranet.birmingham.ac.uk/student">
+              <span></span>
             </a>
           </li>
           <li>
+            <i class="nf nf-md-google_classroom"></i>
+            <p>VLE</p>
+            <a href="https://canvas.bham.ac.uk"><span></span></a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="docs" class="card">
+        <h3>Documentation</h3>
+        <hr />
+        <ul>
+          <li>
+            <i class="nf nf-md-timer_sand"></i>
+            <p>LearnXinY</p>
+            <a href="https://learnxinyminutes.com/"><span></span></a>
+          </li>
+          <li>
+            <i class="nf nf-cod-code"></i>
+            <p>MDN Web Docs</p>
             <a href="https://developer.mozilla.org/en-US/">
-              <i class="fa-solid fa-code"></i>
-              <p>MDN Web Docs</p>
+              <span></span>
             </a>
+          </li>
+          <li>
+            <i class="nf nf-md-stack_overflow"></i>
+            <p>Stack Overflow</p>
+            <a href="https://stackoverflow.com"><span></span></a>
           </li>
         </ul>
-      </div>
-      <div id="docs" class="card">
+      </section>
+      <section id="wikis" class="card">
+        <h3>Wikis</h3>
+        <hr />
         <ul>
           <li>
-            <a href="https://wiki.archlinux.org/">
-              <i class="fa-brands fa-linux"></i>
-              <p>Arch Wiki</p>
-            </a>
+            <i class="nf nf-md-arch"></i>
+            <p>Arch Wiki</p>
+            <a href="https://wiki.archlinux.org/"><span></span></a>
           </li>
           <li>
+            <i class="nf nf-linux-gentoo"></i>
+            <p>Gentoo Wiki</p>
             <a href="https://wiki.gentoo.org/wiki/Main_Page">
-              <i class="fa-brands fa-linux"></i>
-              <p>Gentoo Wiki</p>
+              <span></span>
             </a>
           </li>
           <li>
-            <a href="https://wiki.debian.org/">
-              <i class="fa-brands fa-linux"></i>
-              <p>Debian Wiki</p>
-            </a>
+            <i class="nf nf-md-debian"></i>
+            <p>Debian Wiki</p>
+            <a href="https://wiki.debian.org/"><span></span></a>
+          </li>
+          <li>
+            <i class="nf nf-fa-wikipedia_w"></i>
+            <p>Wikipedia</p>
+            <a href="https://www.wikipedia.org/"><span></span></a>
           </li>
         </ul>
-      </div>
-      <div id="search" class="card">
+      </section>
+      <section id="search" class="card">
+        <h3>Search</h3>
+        <hr />
         <ul>
           <li>
-            <a href="https://www.google.com/">
-              <i class="fa-brands fa-google"></i>
-              <p>Google</p>
-            </a>
+            <i class="nf nf-md-google"></i>
+            <p>Google</p>
+            <a href="https://www.google.com/"><span></span></a>
           </li>
           <li>
-            <a href="https://duckduckgo.com/">
-              <i class="fa-solid fa-user-secret"></i>
-              <p>DuckDuckGo</p>
-            </a>
+            <i class="nf nf-md-incognito"></i>
+            <p>DuckDuckGo</p>
+            <a href="https://duckduckgo.com/"><span></span></a>
           </li>
           <li>
-            <a href="https://search.brave.com/">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <p>Brave</p>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.wikipedia.org/">
-              <i class="fa-brands fa-wikipedia-w"></i>
-              <p>Wikipedia</p>
-            </a>
+            <i class="nf nf-oct-search"></i>
+            <p>Brave</p>
+            <a href="https://search.brave.com/"><span></span></a>
           </li>
         </ul>
-      </div>
-    </div>
+      </section>
+    </main>
+    <footer class="content-width">
+    </footer>
   </body>
 </html>

@@ -1,48 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="system-theme">
   <head>
-    <title>Home - Alex Neville</title>
+    <title>Home</title>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
-      href="https://cdn.alexneville.co.uk/fontawesome/css/all.min.css" />
+      href="https://cdn.alexneville.co.uk/nerd-fonts/nerd-fonts.css" />
     <link
-      href="/res/light.css"
-      rel="stylesheet"
-      id="light-stylesheet" />
-    <link
-      href="/res/dark.css"
-      rel="stylesheet alternate"
-      id="dark-stylesheet" />
-    <link href="/res/style.css" rel="stylesheet" />
-    <link rel="icon" href="https://cdn.alexneville.co.uk/res/site_logo.svg" />
+      rel="icon"
+      href="https://cdn.alexneville.co.uk/res/panda.png" />
+    <link href="/res/index.css" rel="stylesheet" />
+    <link href="/res/error.css" rel="stylesheet" />
     <script src="/res/script.js" defer></script>
   </head>
   <body>
-    <div id="header">
-      <div class="justify-items content-width">
-        <div>
-          <a href="https://alexneville.co.uk">AlexNeville.co.uk</a>
+    <header>
+      <div id="header-components" class="content-width">
+        <div id="banner" class="link-button">
+          <!-- <i class="nf nf-oct-person"></i> -->
+          <p>Alex Neville</p>
+          <a href="./">
+            <span></span>
+          </a>
         </div>
-        <button id="theme-switch-button" type="button">
-          <i class="fa-solid fa-circle-half-stroke"></i>
-        </button>
+        <div id="theme-dropdown-container">
+          <button id="theme-switch-button" class="accent-hover">
+            <i class="nf nf-md-circle_half_full"></i>
+          </button>
+          <div class="dropdown-menu">
+            <div class="link-button">
+              <i class="nf nf-oct-sun"></i>
+              <p>Light</p>
+              <button class="light-theme-button">
+                <span></span>
+              </button>
+            </div>
+            <div class="link-button">
+              <i class="nf nf-oct-moon"></i>
+              <p>Dark</p>
+              <button class="dark-theme-button">
+                <span></span>
+              </button>
+            </div>
+            <div class="link-button">
+              <i class="nf nf-md-circle_half_full"></i>
+              <p>System</p>
+              <button class="system-theme-button">
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div id="content" class="content-width" style="text-align: center;">
-      <h1><i class="fa-solid fa-gears"></i> Error 404</h1>
-
-    </div>
-    <div id="footer">
-      <div class="content-width">
-        <p>
-          Copyright &copy 2023 Alexander Neville
-          <a href="/license.html">(CC BY-SA / GNU GPL)</a>
-        </p>
+    </header>
+    <main class="content-width">
+      <div class="centre">
+        <h1>
+          <i class="nf nf-fa-gears"></i>
+          Error 404
+        </h1>
+        <div class="link-button">
+          <i class="nf nf-md-chevron_double_left"></i>
+          <p>Return Home</p>
+          <a href="/"><span></span></a>
+        </div>
       </div>
-    </div>
+    </main>
+    <footer></footer>
   </body>
 </html>
