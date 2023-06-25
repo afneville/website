@@ -164,7 +164,8 @@ hr {
   max-width: 100%;
   width: 200px;
   margin-inline: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   img {
     border-radius: 50%;
     border: 1px solid var(--bg-emphasis);
@@ -173,8 +174,8 @@ hr {
 }
 
 main {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 #key-fingerprint {
