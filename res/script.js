@@ -48,7 +48,7 @@ if (localStorage.getItem("theme") === "light") {
   darkTheme();
 }
 
-function hideThemeMenuDropDownResize(event) {
+function hideThemeMenuDropDownResizeScroll(event) {
   toggleThemeMenu();
 }
 
@@ -73,10 +73,12 @@ function _toggleThemeMenu() {
     menuIcon.style.color = "var(--fg-secondary)";
     menu.style.display = "block";
     window.addEventListener("click", hideThemeMenuDropDownClick);
-    window.addEventListener("resize", hideThemeMenuDropDownResize);
+    window.addEventListener("resize", hideThemeMenuDropDownResizeScroll);
+    window.addEventListener("scroll", hideThemeMenuDropDownResizeScroll);
   } else {
     window.removeEventListener("click", hideThemeMenuDropDownClick);
-    window.removeEventListener("resize", hideThemeMenuDropDownResize);
+    window.removeEventListener("resize", hideThemeMenuDropDownResizeScroll);
+    window.removeEventListener("scroll", hideThemeMenuDropDownResizeScroll);
     menu.removeAttribute("style");
     menuIcon.removeAttribute("style");
   }
