@@ -148,6 +148,9 @@ body {
   .link-button:hover {
     background-color: var(--bg-emphasis);
   }
+  .accent-hover:hover i {
+    color: var(--fg-secondary) !important;
+  }
 }
 
 .link-button:active {
@@ -181,6 +184,10 @@ main {
 }
 
 #key-fingerprint {
+  margin-bottom: 1rem;
+}
+
+#other-links .horizontal-links {
   margin-bottom: 1rem;
 }
 
@@ -246,7 +253,9 @@ header {
   i {
     font-size: 2rem;
   }
+  font-weight: bold;
 }
+
 @media (hover: hover) {
   #banner:hover {
     background-color: var(--bg-main);
@@ -257,4 +266,19 @@ header {
 #banner:active {
   background-color: var(--bg-main);
   color: var(--fg-secondary);
+}
+
+#greeting {
+  display: flex;
+  justify-content: space-around;
+  #greeting-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--fg-secondary);
+    p {
+      // margin: 0;
+      font-style: italic;
+    }
+  }
 }
