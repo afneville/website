@@ -192,7 +192,10 @@ main {
 }
 
 header {
-  border-bottom: 1px solid var(--bg-emphasis);
+  // border-bottom: 1px solid var(--bg-emphasis);
+  hr {
+    margin: 0;
+  }
   button {
     margin: 0;
     padding: 0;
