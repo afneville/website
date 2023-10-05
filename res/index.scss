@@ -12,7 +12,7 @@ body {
 .content-width {
   padding-inline: 1rem;
   width: calc(100% - 2rem);
-  max-width: 80ch;
+  max-width: 75ch;
   margin-inline: auto;
 }
 
@@ -192,7 +192,6 @@ main {
 }
 
 header {
-  // border-bottom: 1px solid var(--bg-emphasis);
   hr {
     margin: 0;
   }
@@ -202,7 +201,7 @@ header {
     border: none;
     background-color: inherit;
     i {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
   }
   .link-button {
@@ -250,25 +249,31 @@ header {
   justify-content: space-between;
 }
 
-#banner {
-  height: 2rem;
+#site-banner {
   padding: 0;
-  i {
-    font-size: 2rem;
+  img {
+    border-radius: 0.25rem;
+    height: 2rem;
   }
-  font-weight: bold;
+  color: var(--fg-main);
+  font-family: IBMPlexMono, monospace;
 }
-
-@media (hover: hover) {
-  #banner:hover {
+#site-banner:active p {
+  text-decoration: underline;
+}
+@media(hover: hover) {
+  #site-banner {
     background-color: var(--bg-main);
-    color: var(--fg-secondary);
+  }
+  #site-banner:hover p {
+    text-decoration: underline;
   }
 }
 
-#banner:active {
-  background-color: var(--bg-main);
-  color: var(--fg-secondary);
+@media(max-width: 450px) {
+  #site-banner p {
+    display: none;
+  }
 }
 
 #greeting {
