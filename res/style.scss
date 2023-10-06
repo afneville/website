@@ -107,6 +107,7 @@ body {
 }
 
 .link-button {
+  border-radius: 0.25rem;
   overflow: hidden;
   position: relative;
   display: inline-flex;
@@ -256,17 +257,16 @@ header {
     height: 2rem;
   }
   color: var(--fg-main);
-  font-family: IBMPlexMono, monospace;
 }
 #site-banner:active p {
-  text-decoration: underline;
+  color: var(--fg-secondary);
 }
 @media(hover: hover) {
   #site-banner {
     background-color: var(--bg-main);
   }
   #site-banner:hover p {
-    text-decoration: underline;
+    color: var(--fg-secondary);
   }
 }
 
