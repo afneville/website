@@ -201,8 +201,13 @@ header {
     padding: 0;
     border: none;
     background-color: inherit;
+    div {
+      display: flex;
+      align-items: center;
+      height: 2rem;
+    }
     i {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
   .link-button {
