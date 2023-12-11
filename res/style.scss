@@ -262,6 +262,15 @@ header {
     height: 2rem;
   }
   color: var(--fg-main);
+  i {
+    font-size: 1.375rem;
+  }
+  p {
+    font-weight: bold;
+  }
+}
+#site-banner:active i {
+  color: var(--fg-secondary);
 }
 #site-banner:active p {
   color: var(--fg-secondary);
@@ -270,12 +279,15 @@ header {
   #site-banner {
     background-color: var(--bg-main);
   }
+  #site-banner:hover i {
+    color: var(--fg-secondary);
+  }
   #site-banner:hover p {
     color: var(--fg-secondary);
   }
 }
 
-@media(max-width: 200px) {
+@media(max-width: 250px) {
   #site-banner p {
     display: none;
   }
