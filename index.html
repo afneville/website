@@ -1,15 +1,36 @@
 <!doctype html>
 <html lang="en" class="system-theme">
   <head>
-    <title>Alexander Neville - Home</title>
+    <title>Alexander Neville - Home | About | Contact</title>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Alexander Neville" />
+    <meta name="creator" content="Alexander Neville" />
+    <meta property="og:url" content="https://afneville.com" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Alexander Neville - Home | About | Contact" />
+    <meta
+      property="og:image"
+      content="https://cdn.afneville.com/res/panda-landscape.png" />
+    <meta
+      property="og:description"
+      content="Computer Science student and aspiring software engineer (Birmingham/Reading/London)." />
+    <meta
+      name="description"
+      content="Computer Science student and aspiring software engineer (Birmingham/Reading/London)." />
     <link
       rel="stylesheet"
-      href="https://cdn.afneville.com/nerd-fonts/nerd-fonts.css" />
-    <link rel="icon" href="https://cdn.afneville.com/res/panda.png" />
+      href="/res/fonts/nerd-fonts/nerd-fonts.css" />
+    <style>
+      @import "https://www.nerdfonts.com/assets/css/webfont.css";
+    </style>
+    <link
+      rel="icon"
+      href="https://cdn.afneville.com/res/panda-circle.png" />
     <link href="/res/style.css" rel="stylesheet" />
     <script src="/res/script.js" defer></script>
   </head>
@@ -17,7 +38,10 @@
     <header>
       <div id="header-components" class="content-width">
         <div id="site-banner" class="link-button">
-          <i class="nf nf-oct-person"></i>
+          <img
+            src="https://cdn.afneville.com/res/panda.png"
+            alt=""
+            height="calc(2rem - 6px)" />
           <p>Alexander Neville</p>
           <a href="/">
             <span></span>
@@ -67,11 +91,12 @@
           <p>
             Hello, my name is Alexander. I am a second-year
             undergraduate Computer Science student at the University of
-            Birmingham. I am currently learning about programming and
-            software engineering, focusing on the C, C++ and Python
-            languages. I am particularly interested in free and
-            open-source software, Linux & Unix, self-hosting and
-            Internet privacy & security.
+            Birmingham. I am learning about programming, software
+            engineering and system administration - working most often
+            with the C, C++ and Python languages on a Linux platform. I
+            am particularly interested in free & open-source software,
+            Linux & Unix, self-hosting and Internet privacy & security;
+            I enjoy discussing and learning about all of these subjects.
           </p>
         </div>
       </section>
@@ -99,7 +124,7 @@
         </p>
         <div class="horizontal-links">
           <div class="link-button">
-            <i class="nf nf-oct-server"></i>
+            <i class="nf nf-md-server"></i>
             <p>Key Server</p>
             <a
               href="https://keys.openpgp.org/vks/v1/by-fingerprint/BB302E2E1E8460173DD869A0E584CD0E64E26B84">
@@ -107,7 +132,7 @@
             </a>
           </div>
           <div class="link-button">
-            <i class="nf nf-oct-download"></i>
+            <i class="nf nf-fa-download"></i>
             <p>Direct</p>
             <a
               href="./res/BB302E2E1E8460173DD869A0E584CD0E64E26B84.asc"
@@ -135,30 +160,65 @@
         <p>
           You are welcome to view my work on GitHub. I try to document
           novel concepts in writing and I have resultantly compiled a
-          small software-orientated
-          <em>documentation</em>
-          website, which you are equally welcome to look at. I do not
-          use generative artificial intelligence tools in any capacity; I would not
-          attempt to disguise anything other than my own work as such.
+          small software-oriented
+          <em>blog/documentation</em>
+          website, which you are equally welcome to look at. I have made
+          a copy of my CV available for download (with some personal details
+          omitted) and I am also available on LinkedIn.
         </p>
         <div class="horizontal-links">
           <div class="link-button">
-            <i class="nf nf-oct-briefcase"></i>
+            <i class="nf nf-fa-github_alt"></i>
             <p>Portfolio</p>
             <a href="https://github.com/afneville">
               <span></span>
             </a>
           </div>
           <div class="link-button">
-            <i class="nf nf-seti-text"></i>
-            <p>Documentation</p>
+            <i class="nf nf-cod-quote"></i>
+            <p>Blog</p>
             <a href="https://docs.afneville.com/">
+              <span></span>
+            </a>
+          </div>
+          <div class="link-button">
+            <i class="nf nf-fa-linkedin"></i>
+            <p>Profile</p>
+            <a href="https://www.linkedin.com/in/afneville/">
+              <span></span>
+            </a>
+          </div>
+          <div class="link-button">
+            <i class="nf nf-md-school"></i>
+            <p>CV</p>
+            <a
+              href="./res/alexander-neville-CV-public.pdf"
+              target="_blank">
               <span></span>
             </a>
           </div>
         </div>
       </section>
       <hr />
+      <p>
+        I also feel compelled to mention - I have so far resisted - that I am an inveterate
+        <i style="color: #1793d1" class="nf nf-md-arch"></i>
+        Arch Linux,
+        <i style="color: #ffbc00" class="nf nf-linux-wayland"></i>
+        Wayland,
+        <i
+          style="color: #14ba19; background-color: #393939"
+          class="nf nf-cod-terminal_tmux"></i>
+        Tmux,
+        <i style="color: #00b952" class="nf nf-linux-neovim"></i>
+        Neovim and
+        <i style="color: #7f5ab6; background-color: white; border-radius: 50%" class="nf nf-custom-emacs"></i>
+        Emacs user
+        <i
+          style="background-color: #ffcc4d; color: black; border-radius: 50%"
+          class="nf nf-cod-smiley"></i>
+        .
+      </p>
       <section id="greeting">
         <div id="greeting-content">
           <i class="nf nf-cod-smiley"></i>

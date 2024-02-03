@@ -22,6 +22,7 @@ body {
   overflow: hidden;
   display: inline-flex;
   margin: 0;
+  margin-left: 0.5rem;
   padding: 0;
   max-width: 100%;
   .mono {
@@ -100,10 +101,12 @@ body {
 }
 
 .horizontal-links {
+  margin-inline: 0.5rem;
   display: flex;
   gap: 1rem;
   // margin-bottom: 1rem;
   flex-wrap: wrap;
+  // justify-content: center;
 }
 
 .link-button {
@@ -184,9 +187,6 @@ main {
   margin-bottom: 2rem;
 }
 
-#key-fingerprint {
-  margin-bottom: 1rem;
-}
 
 #other-links .horizontal-links {
   margin-bottom: 1rem;
@@ -258,8 +258,9 @@ header {
 #site-banner {
   padding: 0;
   img {
-    border-radius: 0.25rem;
-    height: 2rem;
+    border-radius: 50%;
+    height: calc(2rem - 6px);
+    border: 1px solid var(--bg-emphasis);
   }
   color: var(--fg-main);
   i {
@@ -306,4 +307,16 @@ header {
       font-style: italic;
     }
   }
+}
+
+// #linkedin-button {
+//   margin-bottom: 1rem;
+// }
+
+// #key-fingerprint {
+//   margin-bottom: 1rem;
+// }
+
+hr {
+  margin-top: 1rem;
 }
