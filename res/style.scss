@@ -17,16 +17,16 @@ body {
   margin-inline: auto;
 }
 
-.copy-code {
+.details {
   border: 1px solid var(--bg-emphasis);
   border-radius: 0.5rem;
   overflow: hidden;
   display: inline-flex;
   margin: 0;
-  margin-left: 0.5rem;
+  // margin-inline: 0.5rem;
   padding: 0;
-  max-width: 100%;
-  .mono {
+  max-width: calc (100% -1rem);
+  .display-details {
     border: none;
     margin: 0;
     padding-top: 0.5rem;
@@ -62,52 +62,63 @@ body {
     flex-shrink: 1;
   }
 
-  button {
-    display: relative;
+  .details-option {
+    position: relative;
     border: none;
+    width: 2.3125rem;
     background-color: var(--bg-secondary);
     border-left: 1px solid var(--bg-emphasis);
-    padding: 0.5rem;
-    padding-inline: 0.75rem;
     margin: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     i {
       font-size: 1rem;
       color: var(--fg-secondary);
-    }
-    p {
-      margin: 0;
-      padding: 0;
-      display: none;
+      pointer-events: none;
+      z-index: 2;
     }
     gap: 0.5rem;
-  }
-  @media (hover: hover) {
-    button:hover {
-      background-color: var(--bg-emphasis);
+    a,
+    span,
+    button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      z-index: 1;
+      background: var(--bg-secondary);
     }
-  }
-  button:active {
-    background-color: var(--bg-emphasis);
-  }
-  @media (hover: no) {
+    @media (hover: hover) {
+      span:hover,
+      button:hover {
+        background-color: var(--bg-main);
+        transition-duration: 0.2s;
+      }
+    }
+    span:active,
     button:active {
       background-color: var(--bg-emphasis);
+    transition: 0.2s;
     }
-    button:focus {
-      background-color: var(--bg-emphasis);
+    @media (hover: no) {
+      button:active {
+        background-color: var(--bg-emphasis);
+      }
+      button:focus {
+        background-color: var(--bg-emphasis);
+      }
     }
   }
 }
 
-.horizontal-links {
+.horizontal-array {
   margin-inline: 0.5rem;
   display: flex;
   gap: 1rem;
-  // margin-bottom: 1rem;
   flex-wrap: wrap;
-  // justify-content: center;
 }
 
 .link-button {
@@ -151,15 +162,17 @@ body {
 
 @media (hover: hover) {
   .link-button:hover {
-    background-color: var(--bg-emphasis);
+    background-color: var(--bg-main);
+    transition: 0.2s;
   }
-.accent-hover:hover i {
+  .accent-hover:hover i {
     color: var(--fg-secondary) !important;
   }
 }
 
 .link-button:active {
   background-color: var(--bg-emphasis);
+  transition: 0.2s;
 }
 
 hr {
@@ -188,8 +201,7 @@ main {
   margin-bottom: 2rem;
 }
 
-
-#other-links .horizontal-links {
+#other-links .horizontal-array {
   margin-bottom: 1rem;
 }
 
@@ -277,7 +289,7 @@ header {
 #site-banner:active p {
   color: var(--fg-secondary);
 }
-@media(hover: hover) {
+@media (hover: hover) {
   #site-banner {
     background-color: var(--bg-main);
   }
@@ -289,7 +301,7 @@ header {
   }
 }
 
-@media(max-width: 250px) {
+@media (max-width: 250px) {
   #site-banner p {
     display: none;
   }
@@ -309,14 +321,6 @@ header {
     }
   }
 }
-
-// #linkedin-button {
-//   margin-bottom: 1rem;
-// }
-
-// #key-fingerprint {
-//   margin-bottom: 1rem;
-// }
 
 hr {
   margin-top: 1rem;

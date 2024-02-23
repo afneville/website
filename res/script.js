@@ -24,21 +24,21 @@ document.querySelectorAll(".light-theme-button").forEach((button) =>
   button.addEventListener("click", () => {
     lightTheme();
     toggleThemeMenu();
-  })
+  }),
 );
 
 document.querySelectorAll(".dark-theme-button").forEach((button) =>
   button.addEventListener("click", () => {
     darkTheme();
     toggleThemeMenu();
-  })
+  }),
 );
 
 document.querySelectorAll(".system-theme-button").forEach((button) =>
   button.addEventListener("click", () => {
     systemTheme();
     toggleThemeMenu();
-  })
+  }),
 );
 
 let preference = window.matchMedia("(prefers-color-scheme: dark)");
@@ -67,18 +67,30 @@ function _toggleThemeMenu() {
     .getElementById("theme-switch-button")
     .querySelector("i");
   let menu = document.querySelector(
-    "#theme-dropdown-container .dropdown-menu"
+    "#theme-dropdown-container .dropdown-menu",
   );
   if (menu.style.display !== "block") {
     menuIcon.style.color = "var(--fg-secondary)";
     menu.style.display = "block";
     window.addEventListener("click", hideThemeMenuDropDownClick);
-    window.addEventListener("resize", hideThemeMenuDropDownResizeScroll);
-    window.addEventListener("scroll", hideThemeMenuDropDownResizeScroll);
+    window.addEventListener(
+      "resize",
+      hideThemeMenuDropDownResizeScroll,
+    );
+    window.addEventListener(
+      "scroll",
+      hideThemeMenuDropDownResizeScroll,
+    );
   } else {
     window.removeEventListener("click", hideThemeMenuDropDownClick);
-    window.removeEventListener("resize", hideThemeMenuDropDownResizeScroll);
-    window.removeEventListener("scroll", hideThemeMenuDropDownResizeScroll);
+    window.removeEventListener(
+      "resize",
+      hideThemeMenuDropDownResizeScroll,
+    );
+    window.removeEventListener(
+      "scroll",
+      hideThemeMenuDropDownResizeScroll,
+    );
     menu.removeAttribute("style");
     menuIcon.removeAttribute("style");
   }
@@ -88,39 +100,61 @@ function toggleThemeMenu() {
   _toggleThemeMenu();
 }
 
-async function copyCode(block, copyButton) {
-  let text = block.innerText;
-  await navigator.clipboard.writeText(text);
-  // let para = copyButton.querySelector("p");
-  let icon = copyButton.querySelector("i");
-  icon.classList = "nf nf-oct-check";
-  // para.style.display="block";
-  setTimeout(
-    (copyButton) => {
-      // let para = copyButton.querySelector("p");
-      let icon = copyButton.querySelector("i");
-      icon.classList = "nf nf-md-clipboard_text_outline";
-      // para.removeAttribute("style")
-    },
-    500,
-    copyButton
-  );
+async function copyDetails(block, copyButton) {
+  let details = block.innerText;
+  await navigator.clipboard.writeText(details);
+  // let icon = copyButton.querySelector("i");
+  // icon.classList = "nf nf-oct-check";
+  // setTimeout(
+  //   (copyButton) => {
+  //     let icon = copyButton.querySelector("i");
+  //     icon.classList = "nf nf-oct-copy";
+  //   },
+  //   200,
+  //   copyButton,
+  // );
 }
 
+// async function buttonFeedback(linkButton) {
+//   let icon = linkButton.querySelector("i");
+//   let original = icon.classList;
+//   icon.classList = "nf nf-oct-check";
+//   setTimeout(
+//     (linkButton) => {
+//       let icon = linkButton.querySelector("i");
+//       icon.classList = original;
+//     },
+//     200,
+//     linkButton,
+//   );
+// }
+
 function addClipboardItems() {
-  let blocks = document.querySelectorAll(".copy-code");
+  let blocks = document.querySelectorAll(".details");
   for (var i = 0; i < blocks.length; i++) {
     if (navigator.clipboard) {
-      let block = blocks[i].querySelector(".mono");
-      let copyButton = blocks[i].querySelector("button");
+      let displayField = blocks[i].querySelector(".display-details");
+      let copyButton = blocks[i].querySelector(".copy-details");
       copyButton.addEventListener("click", async () => {
-        await copyCode(block, copyButton);
+        await copyDetails(displayField, copyButton);
       });
     }
   }
 }
 
+// function addLinkFeedback() {
+//   let blocks = document.querySelectorAll(".link-details");
+//   for (var i = 0; i < blocks.length; i++) {
+//     let linkButton = blocks[i].querySelector("span");
+//     console.log(linkButton);
+//     linkButton.addEventListener("click", async () => {
+//       await buttonFeedback(blocks[i]);
+//     });
+//   }
+// }
+
 addClipboardItems();
+// addLinkFeedback();
 
 document
   .getElementById("theme-switch-button")

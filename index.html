@@ -50,7 +50,9 @@
         <div id="theme-dropdown-container">
           <button id="theme-switch-button" class="accent-hover">
             <div>
-              <i style="font-size: 1.5rem;" class="nf nf-md-circle_half_full"></i>
+              <i
+                style="font-size: 1.5rem"
+                class="nf nf-md-circle_half_full"></i>
             </div>
           </button>
           <div class="dropdown-menu">
@@ -102,18 +104,37 @@
       </section>
       <hr />
       <section id="email">
-        <p>My email address:</p>
-        <div>
-          <div class="copy-code">
-            <div class="mono">
+        <p>My email address and Signal username:</p>
+        <div class="horizontal-array">
+          <div class="details">
+            <div class="display-details">contact@afneville.com</div>
+            <div class="details-option copy-details">
+              <i class="nf nf-oct-copy"></i>
+              <button></button>
+            </div>
+            <div class="details-option link-details">
+              <i class="nf nf-fa-send_o"></i>
               <a href="mailto:contact@afneville.com">
-                contact@afneville.com
+                <span></span>
               </a>
             </div>
-            <button>
-              <i class="nf nf-md-clipboard_text_outline"></i>
-              <p>Copied!</p>
-            </button>
+          </div>
+          <div class="details">
+            <div class="display-details">afneville.37</div>
+            <div class="details-option copy-details">
+              <i class="nf nf-oct-copy"></i>
+              <button></button>
+            </div>
+            <div class="details-option link-details">
+              <i
+                class="nf nf-md-chat_outline"
+                style="font-size: 1.25rem"></i>
+              <a
+                href="https://signal.me/#eu/vaojnhDojUTxZPfY7OcrxXKde-0_TQoq8Ho1VGVasQ4Nx5l-27tJqbDod4z3zMfN"
+                target="_blank">
+                <span></span>
+              </a>
+            </div>
           </div>
         </div>
         <p>
@@ -122,7 +143,7 @@
           public key can be downloaded by pressing either one of the two
           buttons below.
         </p>
-        <div class="horizontal-links">
+        <div class="horizontal-array">
           <div class="link-button">
             <i class="nf nf-md-server"></i>
             <p>Key Server</p>
@@ -143,15 +164,15 @@
           </div>
         </div>
         <p>My key fingerprint:</p>
-        <div id="key-fingerprint">
-          <div class="copy-code">
-            <div class="mono">
+        <div class="horizontal-array">
+          <div class="details">
+            <div class="display-details">
               BB302E2E1E8460173DD869A0E584CD0E64E26B84
             </div>
-            <button>
-              <i class="nf nf-md-clipboard_text_outline"></i>
-              <p>Copied!</p>
-            </button>
+            <div class="details-option copy-details">
+              <i class="nf nf-oct-copy"></i>
+              <button></button>
+            </div>
           </div>
         </div>
       </section>
@@ -166,7 +187,7 @@
           a copy of my CV available for download (with some personal
           details omitted) and I am also available on LinkedIn.
         </p>
-        <div class="horizontal-links">
+        <div class="horizontal-array">
           <div class="link-button">
             <i class="nf nf-fa-github_alt"></i>
             <p>Portfolio</p>
