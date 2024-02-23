@@ -66,6 +66,7 @@ body {
     position: relative;
     border: none;
     width: 2.3125rem;
+    flex-shrink: 0;
     background-color: var(--bg-secondary);
     border-left: 1px solid var(--bg-emphasis);
     margin: 0;
@@ -101,7 +102,7 @@ body {
     span:active,
     button:active {
       background-color: var(--bg-emphasis);
-    transition: 0.2s;
+      transition: 0.2s;
     }
     @media (hover: no) {
       button:active {
@@ -129,6 +130,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   background-color: var(--bg-secondary);
+  transition: 0.2s;
   padding: 0.5rem;
   padding-top: calc(0.5rem - 1px);
   padding-bottom: calc(0.5rem - 1px);
