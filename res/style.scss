@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: IBMPlexSans;
+  line-height: 1.5;
   background-color: var(--bg-main);
   color: var(--fg-main);
 }
@@ -152,7 +153,7 @@ body {
   .link-button:hover {
     background-color: var(--bg-emphasis);
   }
-  .accent-hover:hover i {
+.accent-hover:hover i {
     color: var(--fg-secondary) !important;
   }
 }
@@ -207,7 +208,7 @@ header {
       height: 2rem;
     }
     i {
-      font-size: 1.5rem;
+      font-size: 1.5rem !important;
     }
   }
   .link-button {
