@@ -23,7 +23,6 @@ body {
   overflow: hidden;
   display: inline-flex;
   margin: 0;
-  // margin-inline: 0.5rem;
   padding: 0;
   max-width: calc (100% -1rem);
   .display-details {
@@ -34,34 +33,10 @@ body {
     margin-inline: 0.5rem;
     font-family: IBMPlexMono;
     font-size: 0.875rem;
-    a:link {
-      color: inherit;
-      text-decoration: none;
-    }
-    a:visited {
-      color: inherit;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: none;
-    }
-
-    a:active {
-      text-decoration: none;
-    }
-    @media (hover: hover) {
-      a:hover {
-        text-decoration: underline;
-      }
-      a:active {
-        text-decoration: underline;
-      }
-    }
     max-width: 100%;
     overflow-x: auto;
     flex-shrink: 1;
   }
-
   .details-option {
     position: relative;
     border: none;
@@ -90,7 +65,7 @@ body {
       height: 100%;
       border: none;
       z-index: 1;
-      background: var(--bg-secondary);
+      background-color: var(--bg-secondary);
     }
     @media (hover: hover) {
       span:hover,
@@ -103,14 +78,6 @@ body {
     button:active {
       background-color: var(--bg-emphasis);
       transition: 0.2s;
-    }
-    @media (hover: no) {
-      button:active {
-        background-color: var(--bg-emphasis);
-      }
-      button:focus {
-        background-color: var(--bg-emphasis);
-      }
     }
   }
 }
@@ -130,7 +97,6 @@ body {
   align-items: center;
   gap: 0.5rem;
   background-color: var(--bg-secondary);
-  transition: 0.2s;
   padding: 0.5rem;
   padding-top: calc(0.5rem - 1px);
   padding-bottom: calc(0.5rem - 1px);
@@ -223,20 +189,25 @@ header {
     }
     i {
       font-size: 1.5rem !important;
+      color: var(--fg-main);
+      transition: 0.2s;
     }
   }
   .link-button {
     display: flex;
     border-radius: initial;
     background-color: var(--bg-main);
+    transition: 0.2s;
     border: none;
   }
   @media (hover: hover) {
     .link-button:hover {
       background-color: var(--bg-secondary);
+      transition: 0.2s;
     }
-    button:hover {
+    button:hover i {
       color: var(--fg-secondary);
+      transition: 0.2s;
     }
   }
   .link-button:active {
@@ -278,28 +249,27 @@ header {
     border: 1px solid var(--bg-emphasis);
   }
   color: var(--fg-main);
-  i {
-    font-size: 1.375rem;
-  }
+  i,
   p {
+    color: var(--fg-main);
+    transition: 0.2s;
     font-weight: bold;
   }
 }
-#site-banner:active i {
-  color: var(--fg-secondary);
-}
+
 #site-banner:active p {
   color: var(--fg-secondary);
+  // transition: 0.2s;
 }
+
 @media (hover: hover) {
   #site-banner {
     background-color: var(--bg-main);
   }
-  #site-banner:hover i {
-    color: var(--fg-secondary);
-  }
+  #site-banner:hover i,
   #site-banner:hover p {
     color: var(--fg-secondary);
+    transition: 0.2s;
   }
 }
 
