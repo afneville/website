@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: IBMPlexSans;
-  line-height: 1.5;
+  line-height: 1.75;
   background-color: var(--bg-main);
   color: var(--fg-main);
 }
@@ -87,9 +87,20 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-pair {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
 
 .link-button {
+  // font-family: IBMPlexMono;
+  // font-size: 0.875rem;
   border-radius: 0.25rem;
   overflow: hidden;
   position: relative;
@@ -174,6 +185,55 @@ main {
 }
 
 header {
+
+  #header-components {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    // border-bottom: 1px solid var(--bg-emphasis);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #site-banner {
+    padding: 0;
+    img {
+      border-radius: 50%;
+      height: calc(2rem - 6px);
+      border: 1px solid var(--bg-emphasis);
+    }
+    color: var(--fg-main);
+    i,
+    p {
+      // font-family: IBMPlexMono;
+      color: var(--fg-main);
+      transition: 0.2s;
+      font-weight: bold;
+    }
+  }
+
+  #site-banner:active p {
+    color: var(--fg-secondary);
+    // transition: 0.2s;
+  }
+
+  @media (hover: hover) {
+    #site-banner {
+      background-color: var(--bg-main);
+    }
+    #site-banner:hover i,
+    #site-banner:hover p {
+      color: var(--fg-secondary);
+      transition: 0.2s;
+    }
+  }
+
+  @media (max-width: 250px) {
+    #site-banner p {
+      display: none;
+    }
+  }
+
   hr {
     margin: 0;
   }
@@ -194,6 +254,7 @@ header {
     }
   }
   .link-button {
+    font-size: 1rem;
     display: flex;
     border-radius: initial;
     background-color: var(--bg-main);
@@ -229,53 +290,6 @@ header {
         padding-inline: 1rem;
       }
     }
-  }
-}
-
-#header-components {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  // border-bottom: 1px solid var(--bg-emphasis);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#site-banner {
-  padding: 0;
-  img {
-    border-radius: 50%;
-    height: calc(2rem - 6px);
-    border: 1px solid var(--bg-emphasis);
-  }
-  color: var(--fg-main);
-  i,
-  p {
-    color: var(--fg-main);
-    transition: 0.2s;
-    font-weight: bold;
-  }
-}
-
-#site-banner:active p {
-  color: var(--fg-secondary);
-  // transition: 0.2s;
-}
-
-@media (hover: hover) {
-  #site-banner {
-    background-color: var(--bg-main);
-  }
-  #site-banner:hover i,
-  #site-banner:hover p {
-    color: var(--fg-secondary);
-    transition: 0.2s;
-  }
-}
-
-@media (max-width: 250px) {
-  #site-banner p {
-    display: none;
   }
 }
 
