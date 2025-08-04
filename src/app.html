@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			// Set theme immediately to prevent flash
+			(function () {
+				const stored = localStorage.getItem('theme');
+				if (stored === 'dark') {
+					document.documentElement.classList.add('dark');
+				} else if (stored === 'light') {
+					document.documentElement.classList.add('light');
+				} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.add('light');
+				}
+			})();
+
+			// Enable transitions after load
+			window.addEventListener('load', function () {
+				document.body.classList.add('loaded');
+			});
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
