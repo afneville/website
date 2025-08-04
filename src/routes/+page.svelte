@@ -5,7 +5,6 @@
 	import LinkedInIcon from '$lib/assets/linkedin-logo.svg?raw';
 	import GitHubIcon from '$lib/assets/github-logo.svg?raw';
 	import CVTimeline from '$lib/components/cv-timeline.svelte';
-	import DottedLine from '$lib/components/dotted-line.svelte';
 	import LinkWithIcon from '$lib/components/link-with-icon.svelte';
 	const cvEntries = [
 		{
@@ -138,9 +137,5 @@
 			justify-content: flex-start;
 			margin-left: 1rem;
 		}
-	}
-	h2 {
-		font-size: 1.5rem;
-		font-weight: 400;
 	}
 </style>

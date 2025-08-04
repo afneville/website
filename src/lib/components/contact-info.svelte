@@ -33,8 +33,6 @@
 	}
 
 	.title {
-		color: var(--text-primary);
-		font-family: 'Iosevka Aile Web', sans-serif;
 		font-weight: 400;
 	}
 

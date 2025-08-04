@@ -37,10 +37,3 @@
 	</div>
 </div>
 
-<style>
-	h3 {
-		font-size: 1.25rem;
-		font-weight: 400;
-		margin: 0;
-	}
-</style>

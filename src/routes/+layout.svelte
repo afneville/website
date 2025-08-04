@@ -90,6 +90,17 @@
 		margin-inline: auto;
 	}
 
+	:global(h2) {
+		font-size: 1.5rem;
+		font-weight: 400;
+	}
+
+	:global(h3) {
+		font-size: 1.25rem;
+		font-weight: 400;
+		margin: 0;
+	}
+
 	:global(::selection) {
 		background: #654ea3;
 		color: white;
