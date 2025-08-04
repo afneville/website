@@ -8,7 +8,7 @@
 	}>();
 </script>
 
-<a {href} class="link-with-icon" target={target || '_blank'} {download} rel="noopener noreferrer">
+<a {href} class="link-with-icon items-center gap-md font-mono font-light text-secondary" target={target || '_blank'} {download} rel="noopener noreferrer">
 	{#if icon}
 		<span class="icon">
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -->
@@ -21,12 +21,7 @@
 <style>
 	.link-with-icon {
 		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
 		text-decoration: none;
-		font-family: 'Iosevka Etoile Web', 'Consolas', 'Monaco', monospace;
-		font-weight: 300;
-		color: var(--text-secondary);
 		transition: all 0.2s ease;
 	}
 

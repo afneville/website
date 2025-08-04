@@ -73,10 +73,9 @@
 		software systems at <strong>Google</strong> and <strong>Confluent</strong>.
 	</p>
 </section>
-<div style="margin-top:2rem; margin-bottom:2rem;"></div>
-<!-- <DottedLine marginTop="2rem" marginBottom="2rem" /> -->
+<div class="mt-lg mb-lg"></div>
 <section aria-label="Contact Information">
-	<div class="contact-buttons">
+	<div class="contact-buttons flex flex-wrap justify-center gap-2xl">
 		<ContactInfo
 			title="Email"
 			linkText="contact@afneville.com"
@@ -90,18 +89,16 @@
 		/>
 	</div>
 </section>
-<!-- <DottedLine marginBottom="2rem" marginTop="2.5rem" /> -->
-<div style="margin-top:2rem; margin-bottom:2.5rem;"></div>
+<div class="mt-lg" style="margin-bottom: 2.5rem;"></div>
 <section aria-label="Experience">
 	<h2>Experience</h2>
-	<p style="margin-bottom: 2rem;">
+	<p class="mb-lg">
 		An overview of my recent startup and internship work. Some details have been omitted; I would be
 		happy to provide a full copy of my CV upon request.
 	</p>
 	<CVTimeline entries={cvEntries} />
 </section>
-<!-- <DottedLine marginBottom="2rem" marginTop="2.5rem" /> -->
-<div style="margin-top:2rem; margin-bottom:2rem;"></div>
+<div class="mt-lg mb-lg"></div>
 <section aria-label="Interests">
 	<h2>About Me</h2>
 	<p>
@@ -124,12 +121,6 @@
 </section>
 
 <style>
-	.contact-buttons {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 3rem;
-	}
 	@media (max-width: 85ch) {
 		.contact-buttons {
 			flex-direction: column;

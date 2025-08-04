@@ -14,21 +14,17 @@
 </script>
 
 <div>
-	<div style="margin-bottom: 0.75rem;">
-		<h3>{role}&nbsp;&nbsp;<span style="font-weight: 300;">{company}</span></h3>
+	<div class="mb-sm">
+		<h3>{role}&nbsp;&nbsp;<span class="font-light">{company}</span></h3>
 	</div>
-	<div
-		style="color: var(--text-secondary); margin-bottom: 0.75rem; font-family: 'Iosevka Aile Web', 'Consolas', 'Monaco', monospace; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;"
-	>
-		<div style="display: flex; align-items: center;">
+	<div class="employment-info text-secondary font-sans flex justify-between items-start flex-wrap mb-sm">
+		<div class="flex items-center">
 			<span>{employmentType} · {location}</span>
 		</div>
 		<div>{dates}</div>
 	</div>
-	<p style="margin-bottom: 0.75rem;">{description}</p>
-	<div
-		style="color: var(--text-secondary); font-family: 'Iosevka Aile Web', 'Consolas', 'Monaco', monospace; padding-left: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.25rem;"
-	>
+	<p class="mb-sm">{description}</p>
+	<div class="skills text-secondary font-sans flex flex-wrap gap-sm" style="padding-left: 0.5rem;">
 		{#each skills as skill, index (skill)}
 			<span
 				>{skill}{#if index < skills.length - 1}&nbsp;·{/if}</span

@@ -22,7 +22,7 @@
 	{@render children?.()}
 </main>
 
-<footer>
+<footer class="flex justify-center items-center">
 	<ThemeToggle />
 </footer>
 
@@ -76,9 +76,6 @@
 	footer {
 		margin-top: auto;
 		padding: 1rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 
 	:global(p) {
@@ -99,6 +96,86 @@
 		font-size: 1.25rem;
 		font-weight: 400;
 		margin: 0;
+	}
+
+	/* Typography utilities */
+	:global(.font-mono) {
+		font-family: 'Iosevka Etoile Web', 'Consolas', 'Monaco', monospace;
+	}
+
+	:global(.font-sans) {
+		font-family: 'Iosevka Aile Web', system-ui, -apple-system, sans-serif;
+	}
+
+	:global(.text-secondary) {
+		color: var(--text-secondary);
+	}
+
+	:global(.font-light) {
+		font-weight: 300;
+	}
+
+	/* Layout utilities */
+	:global(.flex) {
+		display: flex;
+	}
+
+	:global(.flex-col) {
+		flex-direction: column;
+	}
+
+	:global(.items-center) {
+		align-items: center;
+	}
+
+	:global(.justify-center) {
+		justify-content: center;
+	}
+
+	:global(.justify-between) {
+		justify-content: space-between;
+	}
+
+	:global(.flex-wrap) {
+		flex-wrap: wrap;
+	}
+
+	/* Gap utilities */
+	:global(.gap-sm) {
+		gap: 0.25rem;
+	}
+
+	:global(.gap-md) {
+		gap: 0.5rem;
+	}
+
+	:global(.gap-lg) {
+		gap: 1rem;
+	}
+
+	:global(.gap-xl) {
+		gap: 1.5rem;
+	}
+
+	:global(.gap-2xl) {
+		gap: 3rem;
+	}
+
+	/* Spacing utilities */
+	:global(.mb-sm) {
+		margin-bottom: 0.75rem;
+	}
+
+	:global(.mb-lg) {
+		margin-bottom: 2rem;
+	}
+
+	:global(.mt-lg) {
+		margin-top: 2rem;
+	}
+
+	:global(.mt-xl) {
+		margin-top: 2.5rem;
 	}
 
 	:global(::selection) {

@@ -10,23 +10,18 @@
 	}>();
 </script>
 
-<div class="contact-info">
+<div class="flex-col gap-sm">
 	{#if title}
 		<div class="title-row">
-			<span class="title">{title}</span>
+			<span class="title font-sans">{title}</span>
 		</div>
 	{/if}
-	<div class="link-row">
+	<div class="flex items-center">
 		<LinkWithIcon {linkText} {href} {download} {target} />
 	</div>
 </div>
 
 <style>
-	.contact-info {
-		display: flex;
-		flex-direction: column;
-		gap: 0.25rem;
-	}
 
 	.title-row {
 		margin-bottom: 0.25rem;
@@ -36,8 +31,4 @@
 		font-weight: 400;
 	}
 
-	.link-row {
-		display: flex;
-		align-items: center;
-	}
 </style>

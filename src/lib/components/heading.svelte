@@ -10,10 +10,10 @@
 <div class="heading">
 	<h1 class="gradient-text heading-title">{text}</h1>
 	{#if tagline}
-		<p class="tagline">{tagline}</p>
+		<p class="tagline text-secondary font-mono">{tagline}</p>
 	{/if}
 	{#if socialLinks}
-		<div class="social-links">
+		<div class="social-links flex justify-center gap-xl flex-wrap">
 			{#each socialLinks as link (link.href)}
 				<div>
 					<LinkWithIcon linkText={link.linkText} href={link.href} icon={link.icon} />
@@ -40,19 +40,12 @@
 	}
 
 	.tagline {
-		color: var(--text-secondary);
-		font-family: 'Iosevka Etoile Web', 'Consolas', 'Monaco', monospace;
 		font-size: 1.125rem;
-		/* line-height: 1; */
 		text-align: center;
 	}
 
 	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1.5rem;
 		margin-top: 1rem;
-		flex-wrap: wrap;
 	}
 
 	@media (max-width: 480px) {
