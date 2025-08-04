@@ -1,20 +1,20 @@
 <script lang="ts">
-	let {
-		linkText,
-		href,
-		icon
-	} = $props<{
+	let { linkText, href, icon, download, target } = $props<{
 		linkText: string;
 		href: string;
-		icon: string;
+		icon?: string;
+		download?: string;
+		target?: string;
 	}>();
 </script>
 
-<a {href} class="link-with-icon" target="_blank" rel="noopener noreferrer">
-	<span class="icon">
-		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-		{@html icon}
-	</span>
+<a {href} class="link-with-icon" target={target || '_blank'} {download} rel="noopener noreferrer">
+	{#if icon}
+		<span class="icon">
+			<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+			{@html icon}
+		</span>
+	{/if}
 	<span class="link-text">{linkText}</span>
 </a>
 

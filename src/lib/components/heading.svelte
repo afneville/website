@@ -4,7 +4,7 @@
 		tagline?: string;
 		socialLinks?: Array<{ linkText: string; href: string; icon: string }>;
 	}>();
-	import LinkWithIcon from "./link-with-icon.svelte";
+	import LinkWithIcon from './link-with-icon.svelte';
 </script>
 
 <div class="heading">
@@ -14,7 +14,7 @@
 	{/if}
 	{#if socialLinks}
 		<div class="social-links">
-			{#each socialLinks as link}
+			{#each socialLinks as link (link.href)}
 				<LinkWithIcon linkText={link.linkText} href={link.href} icon={link.icon} />
 			{/each}
 		</div>

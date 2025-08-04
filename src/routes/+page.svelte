@@ -1,12 +1,9 @@
 <script lang="ts">
 	import ContactInfo from '$lib/components/contact-info.svelte';
 	import Heading from '$lib/components/heading.svelte';
-	import SendIcon from '$lib/assets/send.svg?raw';
-	import LockIcon from '$lib/assets/lock.svg?raw';
 	import MessageCircleIcon from '$lib/assets/message-circle.svg?raw';
 	import LinkedInIcon from '$lib/assets/linkedin-logo.svg?raw';
 	import GitHubIcon from '$lib/assets/github-logo.svg?raw';
-	import Divider from '$lib/components/divider.svelte';
 	import CVTimeline from '$lib/components/cv-timeline.svelte';
 	import DottedLine from '$lib/components/dotted-line.svelte';
 	const cvEntries = [
@@ -27,8 +24,18 @@
 			employmentType: 'Internship',
 			dates: 'June 2024 - June 2025',
 			description:
-				'Contributed to the specification and implementation of custom resources and controllers to declaratively manage infrastructure by reconciling objects with cloud provider APIs. Monitored and operated the production multicloud Kubernetes fleet.',
-			skills: ['Go', 'Kubernetes', 'Protobuf', 'gRPC', 'Prometheus', 'AWS', 'GCP', 'Azure']
+				'Contributed to the specification and implementation of custom resources and controllers to declaratively manage infrastructure by reconciling objects with cloud provider APIs. Monitored and operated the multicloud production Kubernetes fleet.',
+			skills: [
+				'Go',
+				'Kubernetes',
+				'Protobuf',
+				'gRPC',
+				'Prometheus',
+				'AWS',
+				'GCP',
+				'Azure',
+				'Terraform'
+			]
 		},
 		{
 			company: 'cuby',
@@ -51,7 +58,11 @@
 		socialLinks={[
 			{ linkText: 'LinkedIn', href: 'https://linkedin.com/in/afneville', icon: LinkedInIcon },
 			{ linkText: 'GitHub', href: 'https://github.com/afneville', icon: GitHubIcon },
-			{ linkText: 'Signal', href: 'https://signal.me/#eu/vaojnhDojUTxZPfY7OcrxXKde-0_TQoq8Ho1VGVasQ4Nx5l-27tJqbDod4z3zMfN', icon: MessageCircleIcon }
+			{
+				linkText: 'Signal',
+				href: 'https://signal.me/#eu/vaojnhDojUTxZPfY7OcrxXKde-0_TQoq8Ho1VGVasQ4Nx5l-27tJqbDod4z3zMfN',
+				icon: MessageCircleIcon
+			}
 		]}
 	/>
 </header>
@@ -80,25 +91,45 @@
 </section>
 <DottedLine marginBottom="2rem" marginTop="2.5rem" />
 <section aria-label="Experience">
+	<h2>Experience</h2>
 	<p style="margin-bottom: 2rem;">
-		An overview of the startup and internship work that I have undertaken recently, some
-		details omitted (I would be happy to provide a full copy of my CV upon
-		request):
+		An overview of my recent startup and internship work. Some details have been omitted; I would be
+		happy to provide a full copy of my CV upon request.
 	</p>
 	<CVTimeline entries={cvEntries} />
 </section>
+<DottedLine marginBottom="2rem" marginTop="2.5rem" />
+<section aria-label="Interests">
+	<h2>About Me</h2>
+	<p>
+		Whilst I am interested in all areas of software engineering and computer science, I have enjoyed
+		learning about the performance characteristics, trade-offs and implementation details of
+		large-scale distributed data systems like Confluent Cloud (Kafka), Bigtable and Colossus
+		(Google's distributed file system) more than anything else.
+	</p>
+	<p>
+		I am (obviously) very enthusiastic about my Arch Linux / Sway / Neovim / tmux setup, you can
+		find the configuration here.
+	</p>
+</section>
 
 <style>
-	p {
-		/* text-align: justify; */
-		/* text-justify: inter-word; */
-		text-wrap: pretty;
-	}
 	.contact-buttons {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: flex-start;
+		justify-content: center;
 		gap: 3rem;
-		margin-left: 1rem;
+	}
+	@media (max-width: 85ch) {
+		.contact-buttons {
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			margin-left: 1rem;
+		}
+	}
+	h2 {
+		font-size: 1.5rem;
+		font-weight: 400;
 	}
 </style>

@@ -5,7 +5,7 @@
 </script>
 
 <div class="cv-timeline">
-	{#each entries as entry, index}
+	{#each entries as entry, index (entry.company + entry.role)}
 		<div class="timeline-item">
 			<div class="timeline-visual">
 				<div class="timeline-point"></div>
@@ -85,5 +85,4 @@
 		flex: 1;
 		min-width: 0;
 	}
-
 </style>

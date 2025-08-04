@@ -10,7 +10,7 @@
 <style>
 	.dotted-line {
 		width: 100%;
-		height: 1px;
-		border-bottom: 1px dotted var(--text-secondary);
+		height: 2px;
+		border-bottom: 2px dotted var(--text-muted);
 	}
 </style>
