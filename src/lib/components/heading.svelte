@@ -15,7 +15,9 @@
 	{#if socialLinks}
 		<div class="social-links">
 			{#each socialLinks as link (link.href)}
-				<LinkWithIcon linkText={link.linkText} href={link.href} icon={link.icon} />
+				<div>
+					<LinkWithIcon linkText={link.linkText} href={link.href} icon={link.icon} />
+				</div>
 			{/each}
 		</div>
 	{/if}
@@ -48,7 +50,14 @@
 	.social-links {
 		display: flex;
 		justify-content: center;
-		gap: 2rem;
+		gap: 1.5rem;
 		margin-top: 1rem;
+		flex-wrap: wrap;
+	}
+
+	@media (max-width: 480px) {
+		.heading-title {
+			font-size: 2.5rem;
+		}
 	}
 </style>

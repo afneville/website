@@ -35,7 +35,7 @@
 	}
 
 	:global(.dark) {
-		--text-secondary: var(--gray-10);
+		--text-secondary: var(--gray-11);
 	}
 
 	:global(body) {
@@ -50,7 +50,6 @@
 		line-height: 1.6;
 		background-color: var(--bg-primary);
 		color: var(--text-primary);
-		font-size: 1.125rem;
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
@@ -68,7 +67,7 @@
 	}
 
 	main {
-		max-width: 75ch;
+		max-width: 80ch;
 		margin-inline: auto;
 		padding: 1rem;
 		flex: 1;
@@ -89,7 +88,6 @@
 		letter-spacing: 0.01em;
 		word-spacing: 0.05em;
 		margin-inline: auto;
-		font-size: 1rem;
 	}
 
 	:global(::selection) {

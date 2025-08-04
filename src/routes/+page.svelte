@@ -6,6 +6,7 @@
 	import GitHubIcon from '$lib/assets/github-logo.svg?raw';
 	import CVTimeline from '$lib/components/cv-timeline.svelte';
 	import DottedLine from '$lib/components/dotted-line.svelte';
+	import LinkWithIcon from '$lib/components/link-with-icon.svelte';
 	const cvEntries = [
 		{
 			company: 'Google',
@@ -73,7 +74,8 @@
 		software systems at <strong>Google</strong> and <strong>Confluent</strong>.
 	</p>
 </section>
-<DottedLine marginTop="2rem" marginBottom="2rem" />
+<div style="margin-top:2rem; margin-bottom:2rem;"></div>
+<!-- <DottedLine marginTop="2rem" marginBottom="2rem" /> -->
 <section aria-label="Contact Information">
 	<div class="contact-buttons">
 		<ContactInfo
@@ -89,7 +91,8 @@
 		/>
 	</div>
 </section>
-<DottedLine marginBottom="2rem" marginTop="2.5rem" />
+<!-- <DottedLine marginBottom="2rem" marginTop="2.5rem" /> -->
+<div style="margin-top:2rem; margin-bottom:2.5rem;"></div>
 <section aria-label="Experience">
 	<h2>Experience</h2>
 	<p style="margin-bottom: 2rem;">
@@ -98,18 +101,26 @@
 	</p>
 	<CVTimeline entries={cvEntries} />
 </section>
-<DottedLine marginBottom="2rem" marginTop="2.5rem" />
+<!-- <DottedLine marginBottom="2rem" marginTop="2.5rem" /> -->
+<div style="margin-top:2rem; margin-bottom:2rem;"></div>
 <section aria-label="Interests">
 	<h2>About Me</h2>
 	<p>
-		Whilst I am interested in all areas of software engineering and computer science, I have enjoyed
-		learning about the performance characteristics, trade-offs and implementation details of
-		large-scale distributed data systems like Confluent Cloud (Kafka), Bigtable and Colossus
-		(Google's distributed file system) more than anything else.
+		I have enjoyed learning about the performance characteristics, trade-offs and implementation
+		details of large-scale distributed data systems like Confluent Cloud (Kafka), Bigtable and
+		Colossus (Google's distributed file system).
 	</p>
 	<p>
-		I am (obviously) very enthusiastic about my Arch Linux / Sway / Neovim / tmux setup, you can
-		find the configuration here.
+		I'm looking into Unix APIs, Linux ABIs, pseudo file systems, standard libraries, compiler
+		toolchains, language runtimes etc. in an ongoing effort to understand a machine and its operating
+		system at the byte level.
+	</p>
+	<p>
+		I am very enthusiastic about my Arch Linux, Sway, Neovim, tmux setup - you can find the
+		configuration files <LinkWithIcon
+			linkText="here"
+			href="https://github.com/afneville/dotfiles"
+		/> :)
 	</p>
 </section>
 

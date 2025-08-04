@@ -50,7 +50,7 @@
 		height: 0.75rem;
 		border-radius: 50%;
 		background: var(--bg-primary);
-		border: 2px solid var(--gray-6);
+		border: 2px solid var(--text-muted);
 		position: absolute;
 		top: 0.5rem;
 		left: 0.125rem;
@@ -61,7 +61,7 @@
 		position: absolute;
 		left: 50%;
 		width: 2px;
-		background: var(--gray-6);
+		background: var(--text-muted);
 		transform: translateX(-50%);
 		z-index: 1;
 	}

@@ -26,7 +26,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.25rem;
-		font-size: 1rem;
 	}
 
 	.title-row {
@@ -36,7 +35,6 @@
 	.title {
 		color: var(--text-primary);
 		font-family: 'Iosevka Aile Web', sans-serif;
-		font-size: 1rem;
 		font-weight: 400;
 	}
 

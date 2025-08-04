@@ -15,10 +15,10 @@
 
 <div>
 	<div style="margin-bottom: 0.75rem;">
-		<h3>{role} <span style="font-weight: 300;">·</span> {company}</h3>
+		<h3>{role}&nbsp;&nbsp;<span style="font-weight: 300;">{company}</span></h3>
 	</div>
 	<div
-		style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.75rem; font-family: 'Iosevka Aile Web', 'Consolas', 'Monaco', monospace; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;"
+		style="color: var(--text-secondary); margin-bottom: 0.75rem; font-family: 'Iosevka Aile Web', 'Consolas', 'Monaco', monospace; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;"
 	>
 		<div style="display: flex; align-items: center;">
 			<span>{employmentType} · {location}</span>
@@ -27,7 +27,7 @@
 	</div>
 	<p style="margin-bottom: 0.75rem;">{description}</p>
 	<div
-		style="color: var(--text-secondary); font-size: 0.85rem; font-family: 'Iosevka Aile Web', 'Consolas', 'Monaco', monospace; padding-left: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.25rem;"
+		style="color: var(--text-secondary); font-family: 'Iosevka Aile Web', 'Consolas', 'Monaco', monospace; padding-left: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.25rem;"
 	>
 		{#each skills as skill, index (skill)}
 			<span

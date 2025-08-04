@@ -25,7 +25,6 @@
 		gap: 0.5rem;
 		text-decoration: none;
 		font-family: 'Iosevka Etoile Web', 'Consolas', 'Monaco', monospace;
-		font-size: 1rem;
 		font-weight: 300;
 		color: var(--text-secondary);
 		transition: all 0.2s ease;
