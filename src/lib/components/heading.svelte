@@ -25,7 +25,7 @@
 
 <style>
 	.heading {
-		margin-bottom: 2.5rem;
+		margin-bottom: 3rem;
 		margin-top: 3rem;
 		text-align: center;
 	}

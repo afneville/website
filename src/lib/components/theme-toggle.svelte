@@ -55,7 +55,7 @@
 <div class="theme-toggle">
 	<label for="theme-select">Theme:</label>
 	<select id="theme-select" bind:value={theme}>
-		<option value="auto">Auto</option>
+		<option value="auto">System</option>
 		<option value="light">Light</option>
 		<option value="dark">Dark</option>
 	</select>

@@ -1,0 +1,34 @@
+/* Global styles and fonts */
+
+/* Optimized font declarations with better fallbacks */
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/WOFF2/IosevkaAile-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/WOFF2/IosevkaAile-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Iosevka Aile Web';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/WOFF2/IosevkaAile-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Iosevka Etoile Web';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/WOFF2/IosevkaEtoile-Regular.woff2') format('woff2');
+}

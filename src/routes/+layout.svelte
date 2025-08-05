@@ -3,17 +3,16 @@
 	import ThemeToggle from '$lib/components/theme-toggle.svelte';
 	import '@radix-ui/colors/gray.css';
 	import '@radix-ui/colors/gray-dark.css';
+	import '../app.css';
 	let { children } = $props();
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="/fonts/IosevkaEtoile.css" />
-	<link rel="stylesheet" href="/fonts/IosevkaAile.css" />
 	<title>Alexander Neville</title>
 	<meta
 		name="description"
-		content="Alexander Neville is a computer science student and software engineer with experience in cloud-scale systems at Google and Confluent."
+		content="Alexander Neville's Personal Site"
 	/>
 	<meta name="author" content="Alexander Neville" />
 </svelte:head>
