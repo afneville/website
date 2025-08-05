@@ -11,7 +11,6 @@ const projectRoot = join(__dirname, '..');
 // Configuration
 const BUILD_DIR = join(projectRoot, '.build');
 const FONTS_DIR = join(BUILD_DIR, 'fonts', 'WOFF2');
-const SOURCE_FONTS_DIR = join(projectRoot, 'static', 'fonts', 'WOFF2');
 
 // Character sets to include (optimized for your content)
 const LATIN_BASIC = 'U+0020-007F'; // Basic Latin (space through DEL)
@@ -39,7 +38,7 @@ async function checkPyftsubset() {
 		try {
 			await execAsync(`${path} --help`);
 			return path;
-		} catch (error) {
+		} catch {
 			continue;
 		}
 	}
@@ -86,7 +85,7 @@ function analyzeCharacterUsage() {
 
 	try {
 		scanDirectory(BUILD_DIR);
-	} catch (error) {
+	} catch {
 		console.warn('⚠️  Could not analyze build directory, using default character set');
 	}
 
@@ -143,7 +142,7 @@ async function main() {
 	// Check if build directory exists
 	try {
 		statSync(BUILD_DIR);
-	} catch (error) {
+	} catch {
 		console.error(`❌ Build directory not found: ${BUILD_DIR}`);
 		console.log('💡 Run "npm run build" first to generate the build output');
 		process.exit(1);
@@ -160,12 +159,12 @@ async function main() {
 	}
 
 	// Analyze character usage in build output
-	const usedChars = analyzeCharacterUsage();
+	analyzeCharacterUsage();
 
 	// Check if fonts directory exists in build
 	try {
 		statSync(FONTS_DIR);
-	} catch (error) {
+	} catch {
 		console.error(`❌ Fonts directory not found in build: ${FONTS_DIR}`);
 		process.exit(1);
 	}
@@ -175,7 +174,6 @@ async function main() {
 
 	// Process each font file
 	for (const fontFile of FONT_FILES) {
-		const sourcePath = join(SOURCE_FONTS_DIR, fontFile);
 		const buildPath = join(FONTS_DIR, fontFile);
 		const tempPath = join(FONTS_DIR, `${fontFile}.subset`);
 
@@ -197,7 +195,7 @@ async function main() {
 			// Clean up temp file
 			try {
 				await execAsync(`rm "${tempPath}"`);
-			} catch (error) {
+			} catch {
 				// Ignore cleanup errors
 			}
 		} catch (error) {

@@ -1,10 +1,11 @@
 <script lang="ts">
-	let { linkText, href, icon, download, target } = $props<{
+	let { linkText, href, icon, download, target, children } = $props<{
 		linkText: string;
 		href: string;
 		icon?: string;
 		download?: string;
 		target?: string;
+		children?: import('svelte').Snippet;
 	}>();
 </script>
 
@@ -22,7 +23,11 @@
 		</span>
 	{/if}
 	<span class="link-text">
-		<slot>{linkText}</slot>
+		{#if children}
+			{@render children()}
+		{:else}
+			{linkText}
+		{/if}
 	</span>
 </a>
 
