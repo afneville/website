@@ -10,10 +10,7 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 	<title>Alexander Neville</title>
-	<meta
-		name="description"
-		content="Alexander Neville's Personal Site"
-	/>
+	<meta name="description" content="Alexander Neville's Personal Site" />
 	<meta name="author" content="Alexander Neville" />
 </svelte:head>
 
@@ -92,7 +89,7 @@
 	}
 
 	:global(h3) {
-		font-size: 1.25rem;
+		font-size: 1.125rem;
 		font-weight: 400;
 		margin: 0;
 	}
@@ -103,7 +100,11 @@
 	}
 
 	:global(.font-sans) {
-		font-family: 'Iosevka Aile Web', system-ui, -apple-system, sans-serif;
+		font-family:
+			'Iosevka Aile Web',
+			system-ui,
+			-apple-system,
+			sans-serif;
 	}
 
 	:global(.text-secondary) {
@@ -112,6 +113,23 @@
 
 	:global(.font-light) {
 		font-weight: 300;
+	}
+
+	:global(.no-break) {
+		white-space: nowrap;
+	}
+
+	:global(.no-hyphen-break) {
+		hyphens: none;
+		word-break: keep-all;
+	}
+
+	:global(.indent-xs) {
+		padding-left: 0.25rem;
+	}
+
+	:global(.mb-2xl) {
+		margin-bottom: 2.5rem;
 	}
 
 	/* Layout utilities */

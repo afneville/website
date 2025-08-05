@@ -42,6 +42,10 @@
 		font-size: 2.5rem;
 		font-weight: 700;
 		margin-bottom: 2rem;
-		font-family: 'Iosevka Aile Web', system-ui, -apple-system, sans-serif;
+		font-family:
+			'Iosevka Aile Web',
+			system-ui,
+			-apple-system,
+			sans-serif;
 	}
 </style>

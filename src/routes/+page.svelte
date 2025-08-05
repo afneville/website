@@ -67,9 +67,10 @@
 </header>
 <section aria-label="About">
 	<p>
-		Hello, my name is Alexander. I am a computer science student at the University of Birmingham. I
-		have contributed to the design, development and operation of cloud-scale, high-performance
-		software systems at <strong>Google</strong> and <strong>Confluent</strong>.
+		Hello, my name is Alexander. I am an undergraduate computer science student at the University of
+		Birmingham in the United Kingdom. I have contributed to the design, development and operation of
+		cloud-scale, high-performance distributed software systems at <strong>Google</strong> and
+		<strong>Confluent</strong>.
 	</p>
 </section>
 <div class="mt-lg mb-lg"></div>
@@ -80,15 +81,13 @@
 			linkText="contact@afneville.com"
 			href="mailto:contact@afneville.com"
 		/>
-		<ContactInfo
-			title="PGP"
-			linkText="BB30 2E2E 1E84 6017 3DD8  69A0 E584 CD0E 64E2 6B84"
-			href="key.asc"
-			download="alexander-neville-pgp-key.asc"
-		/>
+		<ContactInfo title="PGP" href="key.asc" download="alexander-neville-pgp-key.asc">
+			<span class="no-break">BB30 2E2E 1E84 6017 3DD8</span>
+			<span class="no-break">69A0 E584 CD0E 64E2 6B84</span>
+		</ContactInfo>
 	</div>
 </section>
-<div class="mt-lg" style="margin-bottom: 2.5rem;"></div>
+<div class="mt-lg mb-2xl"></div>
 <section aria-label="Experience">
 	<h2>Experience</h2>
 	<p class="mb-lg">

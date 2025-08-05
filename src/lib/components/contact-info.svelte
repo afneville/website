@@ -3,26 +3,27 @@
 
 	let { title, linkText, href, download, target } = $props<{
 		title?: string;
-		linkText: string;
+		linkText?: string;
 		href: string;
 		download?: string;
 		target?: string;
 	}>();
 </script>
 
-<div class="flex-col gap-sm">
+<div class="flex flex-col gap-sm">
 	{#if title}
 		<div class="title-row">
 			<span class="title font-sans">{title}</span>
 		</div>
 	{/if}
 	<div class="flex items-center">
-		<LinkWithIcon {linkText} {href} {download} {target} />
+		<LinkWithIcon {linkText} {href} {download} {target}>
+			<slot>{linkText}</slot>
+		</LinkWithIcon>
 	</div>
 </div>
 
 <style>
-
 	.title-row {
 		margin-bottom: 0.25rem;
 	}
@@ -30,5 +31,4 @@
 	.title {
 		font-weight: 400;
 	}
-
 </style>

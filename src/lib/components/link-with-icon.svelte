@@ -8,14 +8,22 @@
 	}>();
 </script>
 
-<a {href} class="link-with-icon items-center gap-md font-mono font-light text-secondary" target={target || '_blank'} {download} rel="noopener noreferrer">
+<a
+	{href}
+	class="link-with-icon items-center gap-md font-mono font-light text-secondary"
+	target={target || '_blank'}
+	{download}
+	rel="noopener noreferrer"
+>
 	{#if icon}
 		<span class="icon">
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 			{@html icon}
 		</span>
 	{/if}
-	<span class="link-text">{linkText}</span>
+	<span class="link-text">
+		<slot>{linkText}</slot>
+	</span>
 </a>
 
 <style>
@@ -30,6 +38,18 @@
 	}
 
 	.link-text {
+		text-decoration: none;
+		line-height: 1.7;
+	}
+
+	.link-text :global(span) {
+		text-decoration: underline;
+		text-decoration-style: dotted;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 0.4em;
+	}
+
+	.link-text:not(:has(:global(span))) {
 		text-decoration: underline;
 		text-decoration-style: dotted;
 		text-decoration-thickness: 2px;

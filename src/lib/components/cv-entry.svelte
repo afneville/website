@@ -15,16 +15,18 @@
 
 <div>
 	<div class="mb-sm">
-		<h3>{role}&nbsp;&nbsp;<span class="font-light">{company}</span></h3>
+		<h3>{role}</h3>
 	</div>
-	<div class="employment-info text-secondary font-sans flex justify-between items-start flex-wrap mb-sm">
+	<div
+		class="employment-info text-secondary font-sans flex justify-between items-start flex-wrap mb-sm indent-xs"
+	>
 		<div class="flex items-center">
-			<span>{employmentType} · {location}</span>
+			<span>{company} · {employmentType} · <span class="no-hyphen-break">{location}</span></span>
 		</div>
 		<div>{dates}</div>
 	</div>
 	<p class="mb-sm">{description}</p>
-	<div class="skills text-secondary font-sans flex flex-wrap gap-sm" style="padding-left: 0.5rem;">
+	<div class="skills text-secondary font-sans flex flex-wrap gap-sm indent-xs">
 		{#each skills as skill, index (skill)}
 			<span
 				>{skill}{#if index < skills.length - 1}&nbsp;·{/if}</span
@@ -32,4 +34,3 @@
 		{/each}
 	</div>
 </div>
-
