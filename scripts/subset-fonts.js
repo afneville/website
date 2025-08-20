@@ -50,50 +50,6 @@ async function checkPyftsubset() {
 }
 
 /**
- * Analyze built HTML/CSS files to extract actual character usage
- */
-function analyzeCharacterUsage() {
-	const chars = new Set();
-
-	// Scan all HTML and CSS files in build directory
-	function scanDirectory(dir) {
-		const items = readdirSync(dir);
-
-		for (const item of items) {
-			const fullPath = join(dir, item);
-			const stat = statSync(fullPath);
-
-			if (stat.isDirectory()) {
-				scanDirectory(fullPath);
-			} else if (item.endsWith('.html') || item.endsWith('.css') || item.endsWith('.js')) {
-				try {
-					const content = readFileSync(fullPath, 'utf8');
-					// Extract all characters from content
-					for (const char of content) {
-						const code = char.charCodeAt(0);
-						// Include printable ASCII and Latin-1
-						if ((code >= 32 && code <= 126) || (code >= 160 && code <= 255)) {
-							chars.add(char);
-						}
-					}
-				} catch (error) {
-					console.warn(`⚠️  Could not read ${fullPath}: ${error.message}`);
-				}
-			}
-		}
-	}
-
-	try {
-		scanDirectory(BUILD_DIR);
-	} catch {
-		console.warn('⚠️  Could not analyze build directory, using default character set');
-	}
-
-	console.log(`📊 Found ${chars.size} unique characters in build output`);
-	return chars;
-}
-
-/**
  * Subset a single font file
  */
 async function subsetFont(fontPath, outputPath, unicodeRanges, pyftsubsetPath) {
@@ -158,8 +114,6 @@ async function main() {
 		process.exit(1);
 	}
 
-	// Analyze character usage in build output
-	analyzeCharacterUsage();
 
 	// Check if fonts directory exists in build
 	try {
