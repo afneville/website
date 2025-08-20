@@ -1,0 +1,84 @@
+name: 'Landing Page Deployment'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  provision-build-deploy:
+    name: 'Provision, Build, and Deploy'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    env:
+      TF_VAR_bucket_name: ${{ vars.BUCKET_NAME }}
+      TF_VAR_domain_names: ${{ vars.DOMAIN_NAMES }}
+      TF_VAR_hosted_zone: ${{ vars.HOSTED_ZONE }}
+
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+
+      - name: 'Configure AWS Credentials'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: 'Setup Terraform'
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '1.5.0'
+
+      - name: 'Create Terraform Backend Config'
+        run: |
+          cat > backend.tfvars <<EOF
+          bucket         = "${{ secrets.TF_STATE_BUCKET }}"
+          key            = "${{ secrets.TF_STATE_KEY }}"
+          region         = "${{ secrets.TF_STATE_REGION }}"
+          dynamodb_table = "${{ secrets.TF_STATE_LOCK_TABLE }}"
+          EOF
+
+      - name: 'Terraform Init'
+        id: init
+        run: terraform init -backend-config=backend.tfvars
+
+      - name: 'Terraform Plan'
+        id: plan
+        run: terraform plan -no-color -out=tfplan
+
+      - name: 'Show Terraform Plan'
+        run: terraform show tfplan
+
+      # - name: 'Terraform Apply'
+      #   id: apply
+      #   run: terraform apply -auto-approve tfplan
+
+      - name: 'Record Terraform Outputs'
+        id: get_outputs
+        run: |
+          echo "CLOUDFRONT_DISTRIBUTION_ID=$(terraform output -raw distribution_id)" >> $GITHUB_ENV
+
+      - name: 'Setup Node.js'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 'NPM Install and Build'
+        run: |
+          npm install
+          npm run build
+
+      - name: 'Sync to S3'
+        run: |
+          aws s3 sync --dryrun ./.build s3://${{ env.TF_VAR_bucket_name }} --delete
+
+      # - name: 'Invalidate CloudFront Distribution'
+      #   run: |
+      #     aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
