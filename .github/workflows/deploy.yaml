@@ -36,6 +36,7 @@ jobs:
           terraform_version: '1.5.0'
 
       - name: 'Create Terraform Backend Config'
+        working-directory: ./infra
         run: |
           cat > backend.tfvars <<EOF
           bucket         = "${{ secrets.TF_STATE_BUCKET }}"
@@ -46,13 +47,16 @@ jobs:
 
       - name: 'Terraform Init'
         id: init
+        working-directory: ./infra
         run: terraform init -backend-config=backend.tfvars
 
       - name: 'Terraform Plan'
         id: plan
+        working-directory: ./infra
         run: terraform plan -no-color -out=tfplan
 
       - name: 'Show Terraform Plan'
+        working-directory: ./infra
         run: terraform show tfplan
 
       # - name: 'Terraform Apply'
@@ -61,6 +65,7 @@ jobs:
 
       - name: 'Record Terraform Outputs'
         id: get_outputs
+        working-directory: ./infra
         run: |
           echo "CLOUDFRONT_DISTRIBUTION_ID=$(terraform output -raw distribution_id)" >> $GITHUB_ENV
 
