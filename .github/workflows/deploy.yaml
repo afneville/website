@@ -44,12 +44,10 @@ jobs:
           EOF
 
       - name: 'Terraform Init'
-        id: init
         working-directory: ./infra
         run: terraform init -backend-config=backend.tfvars
 
       - name: 'Terraform Plan'
-        id: plan
         working-directory: ./infra
         run: terraform plan -no-color -out=tfplan
 
@@ -58,11 +56,10 @@ jobs:
         run: terraform show tfplan
 
       - name: 'Terraform Apply'
-        id: apply
+        working-directory: ./infra
         run: terraform apply -auto-approve tfplan
 
       - name: 'Record Terraform Outputs'
-        id: get_outputs
         working-directory: ./infra
         run: |
           echo "CLOUDFRONT_DISTRIBUTION_ID=$(terraform output -raw distribution_id)" >> $GITHUB_ENV
