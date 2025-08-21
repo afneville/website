@@ -3,14 +3,23 @@
 		company: string;
 		role: string;
 		location: string;
+		workingPattern: string;
 		employmentType: string;
 		dates: string;
 		description: string;
 		skills: string[];
 	}
 
-	let { company, role, location, employmentType, dates, description, skills }: CVEntryProps =
-		$props();
+	let {
+		company,
+		role,
+		location,
+		workingPattern,
+		employmentType,
+		dates,
+		description,
+		skills
+	}: CVEntryProps = $props();
 </script>
 
 <div>
@@ -20,9 +29,7 @@
 	<div
 		class="employment-info text-secondary font-sans flex justify-between items-start flex-wrap mb-sm indent-xs"
 	>
-		<div class="flex items-center">
-			<span>{company} · {employmentType} · <span class="no-hyphen-break">{location}</span></span>
-		</div>
+		<span>{company} · {employmentType} · {workingPattern} · <span class="no-break">{location}</span></span>
 		<div>{dates}</div>
 	</div>
 	<p class="mb-sm">{description}</p>

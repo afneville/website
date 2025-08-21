@@ -5,26 +5,29 @@
 	import LinkedInIcon from '$lib/assets/linkedin-logo.svg?raw';
 	import GitHubIcon from '$lib/assets/github-logo.svg?raw';
 	import CVTimeline from '$lib/components/cv-timeline.svelte';
+	import { type CVEntryProps } from '$lib/components/cv-entry.svelte';
 	import LinkWithIcon from '$lib/components/link-with-icon.svelte';
-	const cvEntries = [
+	const cvEntries: CVEntryProps[] = [
 		{
 			company: 'Google',
 			role: 'Site Reliability Engineer',
-			location: 'On-site, Dublin, Ireland',
+			workingPattern: 'On-site',
+			location: 'Dublin, Ireland',
 			employmentType: 'Internship',
 			dates: 'June 2025 - September 2025',
 			description:
-				'Implemented an observability front end to visualise the availability of key ranges and microsecond-accurate latencies in the sharding, rebalancing and failover behaviour of Bigtable cells by querying internal metadata.',
-			skills: ['C++', 'Bigtable', 'Protobuf', 'RPC', 'FFI', 'TypeScript', 'Angular']
+				'Implemented an interactive observability front end to visualise the availability of key ranges and microsecond-accurate latencies in the sharding, rebalancing and tablet server failover behaviour of Bigtable cells by querying internal metadata.',
+			skills: ['C++', 'Bigtable', 'Protobuf', 'RPC', 'FFI', 'TypeScript', 'Angular', 'RxJS', 'D3']
 		},
 		{
 			company: 'Confluent',
 			role: 'Cloud Infrastructure Engineer',
-			location: 'Remote, United Kingdom',
+			workingPattern: 'Remote',
+			location: 'United Kingdom',
 			employmentType: 'Internship',
 			dates: 'June 2024 - June 2025',
 			description:
-				'Contributed to the specification and implementation of custom resources and controllers to declaratively manage infrastructure by reconciling objects with cloud provider APIs. Monitored and operated the production Kubernetes fleet.',
+				'Contributed to the specification and implementation of custom resources and controllers to declaratively manage infrastructure by reconciling intent with cloud provider APIs. Monitored and operated the production Kubernetes fleet.',
 			skills: [
 				'Go',
 				'Kubernetes',
@@ -40,7 +43,8 @@
 		{
 			company: 'cuby',
 			role: 'Full-stack Software Engineer',
-			location: 'Remote, United Kingdom',
+			workingPattern: 'Remote',
+			location: 'United Kingdom',
 			employmentType: 'Freelance',
 			dates: 'March 2024 - August 2024',
 			description:
@@ -69,7 +73,7 @@
 	<p>
 		Hello, my name is Alexander. I am an undergraduate computer science student at the University of
 		Birmingham in the United Kingdom. I have contributed to the design, development and operation of
-		cloud-scale, high-performance distributed software systems at <strong>Google</strong> and
+		cloud-scale, high-performance distributed data systems at <strong>Google</strong> and
 		<strong>Confluent</strong>.
 	</p>
 </section>
@@ -91,7 +95,7 @@
 <section aria-label="Experience">
 	<h2>Experience</h2>
 	<p class="mb-lg">
-		An overview of my recent startup and internship roles. Some details have been omitted; I would
+		Here is an overview of my recent startup and internship roles. Some details have been omitted; I would
 		be happy to provide a full copy of my CV upon request.
 	</p>
 	<CVTimeline entries={cvEntries} />
