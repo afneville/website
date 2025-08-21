@@ -76,7 +76,7 @@ jobs:
 
       - name: 'Sync to S3'
         run: |
-          aws s3 sync --dryrun ./.build s3://${{ env.TF_VAR_bucket_name }} --delete
+          aws s3 sync ./.build s3://${{ env.TF_VAR_bucket_name }} --delete
 
       - name: 'Invalidate CloudFront Distribution'
         run: |
