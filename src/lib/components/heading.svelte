@@ -46,11 +46,27 @@
 
 	.social-links {
 		margin-top: 1rem;
+		row-gap: 0.5rem;
 	}
 
-	@media (max-width: 480px) {
+	@media (max-width: 600px) {
 		.heading-title {
 			font-size: 2.5rem;
+		}
+
+		.tagline {
+			display: none;
+		}
+		.social-links {
+			margin-inline: auto;
+			max-width: 300px;
+		}
+	}
+
+	@media (max-width: 450px) {
+		.heading-title {
+			font-size: 2rem;
+			letter-spacing: 0.125rem;
 		}
 	}
 </style>

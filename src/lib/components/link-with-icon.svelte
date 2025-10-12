@@ -74,4 +74,5 @@
 		height: 1rem;
 		stroke: var(--text-secondary);
 	}
+
 </style>

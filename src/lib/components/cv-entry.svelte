@@ -27,9 +27,13 @@
 		<h3>{role}</h3>
 	</div>
 	<div
-		class="employment-info text-secondary font-sans flex justify-between items-start flex-wrap mb-sm indent-xs"
+		class="employment-info text-secondary font-sans flex justify-between items-start flex-wrap mb-sm indent-xs gap-lg"
 	>
-		<span>{company} · {employmentType} · {workingPattern} · <span class="no-break">{location}</span></span>
+		<div class="flex flex-wrap gap-lg">
+			<span>{company}</span>
+			<span>{employmentType}</span>
+			<span class="no-break">{workingPattern}, {location}</span>
+		</div>
 		<div>{dates}</div>
 	</div>
 	<p class="mb-sm">{description}</p>

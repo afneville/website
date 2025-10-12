@@ -1,9 +1,10 @@
 <script lang="ts">
-	import ContactInfo from '$lib/components/contact-info.svelte';
 	import Heading from '$lib/components/heading.svelte';
 	import MessageCircleIcon from '$lib/assets/message-circle.svg?raw';
 	import LinkedInIcon from '$lib/assets/linkedin-logo.svg?raw';
 	import GitHubIcon from '$lib/assets/github-logo.svg?raw';
+	import AtSignIcon from '$lib/assets/at-sign.svg?raw';
+	import LockIcon from '$lib/assets/lock.svg?raw';
 	import CVTimeline from '$lib/components/cv-timeline.svelte';
 	import { type CVEntryProps } from '$lib/components/cv-entry.svelte';
 	import LinkWithIcon from '$lib/components/link-with-icon.svelte';
@@ -16,7 +17,7 @@
 			employmentType: 'Internship',
 			dates: 'June 2025 - September 2025',
 			description:
-				'Implemented an interactive observability front end to visualise the availability of key ranges and microsecond-accurate latencies in the sharding, rebalancing and tablet server failover behaviour of Bigtable cells by querying internal metadata.',
+				'Implemented an interactive observability front end to visualise the availability of key ranges and submillisecond latencies in the sharding, rebalancing and tablet server failover behaviour of Bigtable cells by querying internal metadata.',
 			skills: ['C++', 'Bigtable', 'Protobuf', 'RPC', 'FFI', 'TypeScript', 'Angular', 'RxJS', 'D3']
 		},
 		{
@@ -65,44 +66,31 @@
 				linkText: 'Signal',
 				href: 'https://signal.me/#eu/vaojnhDojUTxZPfY7OcrxXKde-0_TQoq8Ho1VGVasQ4Nx5l-27tJqbDod4z3zMfN',
 				icon: MessageCircleIcon
-			}
+			},
+			{ linkText: 'Email', href: 'mailto:contact@afneville.com', icon: AtSignIcon },
+			{ linkText: 'PGP', href: 'key.asc', icon: LockIcon }
 		]}
 	/>
 </header>
 <section aria-label="About">
 	<p>
-		Hello, my name is Alexander. I am an undergraduate computer science student at the University of
-		Birmingham in the United Kingdom. I have contributed to the design, development and operation of
-		cloud-scale, high-performance distributed data systems at <strong>Google</strong> and
-		<strong>Confluent</strong>.
+		I am an undergraduate computer science student at the University of
+		Birmingham in the United Kingdom. I have contributed to the design, development and operation of cloud-scale,
+		high-performance distributed systems at Google and Confluent.
 	</p>
-</section>
-<div class="mt-lg mb-lg"></div>
-<section aria-label="Contact Information">
-	<div class="email-pgp flex flex-wrap justify-center gap-2xl">
-		<ContactInfo
-			title="Email"
-			linkText="contact@afneville.com"
-			href="mailto:contact@afneville.com"
-		/>
-		<ContactInfo title="PGP" href="key.asc" download="alexander-neville-pgp-key.asc">
-			<span class="no-break">BB30 2E2E 1E84 6017 3DD8</span>
-			<span class="no-break">69A0 E584 CD0E 64E2 6B84</span>
-		</ContactInfo>
-	</div>
 </section>
 <div class="mt-lg mb-2xl"></div>
 <section aria-label="Experience">
-	<h2>Experience</h2>
-	<p class="mb-lg">
-		Here is an overview of my recent startup and internship roles. Some details have been omitted; I would
-		be happy to provide a full copy of my CV upon request.
-	</p>
+	<!-- <h2>Experience</h2> -->
+	<!-- <p class="mb-lg"> -->
+	<!-- 	Here is an overview of my recent startup and internship roles. Some details have been omitted; I -->
+	<!-- 	would be happy to provide a full copy of my CV upon request. -->
+	<!-- </p> -->
 	<CVTimeline entries={cvEntries} />
 </section>
 <div class="mt-lg mb-lg"></div>
 <section aria-label="Interests">
-	<h2>About Me</h2>
+	<!-- <h2>About Me</h2> -->
 	<p>
 		I have enjoyed learning about the performance characteristics, trade-offs and implementation
 		details of large-scale distributed data systems like Confluent Cloud (Kafka), Bigtable and
@@ -121,17 +109,9 @@
 		/>. My blog/documentation website, an older project, can be read <LinkWithIcon
 			linkText="here"
 			href="https://docs.afneville.com"
+		/>. I publish some of the photos I take <LinkWithIcon
+			linkText="here"
+			href="https://photos.afneville.com"
 		/>.
 	</p>
 </section>
-
-<style>
-	@media (max-width: 85ch) {
-		.email-pgp {
-			flex-direction: column;
-			align-items: flex-start;
-			justify-content: flex-start;
-			margin-left: 1rem;
-		}
-	}
-</style>

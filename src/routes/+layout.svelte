@@ -69,6 +69,10 @@
 		flex: 1;
 	}
 
+	:global(p) {
+		text-align: justify;
+	}
+
 	footer {
 		margin-top: auto;
 		padding: 1rem;
