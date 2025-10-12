@@ -46,41 +46,46 @@ describe('ThemeToggle', () => {
 	});
 
 	describe('Initial Rendering', () => {
-		it('renders theme toggle with default "auto" option selected', () => {
-			const { getByRole } = render(ThemeToggle);
-			const select = getByRole('combobox') as HTMLSelectElement;
+		it('renders theme toggle with default "auto" button active', () => {
+			const { getByTitle } = render(ThemeToggle);
+			const autoButton = getByTitle('Auto theme') as HTMLButtonElement;
 
-			expect(select).toBeInTheDocument();
-			expect(select.value).toBe('auto');
+			expect(autoButton).toBeInTheDocument();
+			expect(autoButton.classList.contains('active')).toBe(true);
 		});
 
 		it('loads theme from localStorage on mount', () => {
 			localStorageMock.getItem.mockReturnValue('dark');
 
-			const { getByRole } = render(ThemeToggle);
-			const select = getByRole('combobox') as HTMLSelectElement;
+			const { getByTitle } = render(ThemeToggle);
+			const darkButton = getByTitle('Dark theme') as HTMLButtonElement;
 
 			expect(localStorageMock.getItem).toHaveBeenCalledWith('theme');
-			expect(select.value).toBe('dark');
+			expect(darkButton.classList.contains('active')).toBe(true);
 		});
 
-		it('contains all theme options', () => {
-			const { getByRole } = render(ThemeToggle);
-			const select = getByRole('combobox');
-			const options = select.querySelectorAll('option');
+		it('contains all theme buttons', () => {
+			const { getByTitle } = render(ThemeToggle);
 
-			expect(options).toHaveLength(3);
-			expect(options[0].value).toBe('auto');
-			expect(options[1].value).toBe('light');
-			expect(options[2].value).toBe('dark');
+			const autoButton = getByTitle('Auto theme');
+			const lightButton = getByTitle('Light theme');
+			const darkButton = getByTitle('Dark theme');
+
+			expect(autoButton).toBeInTheDocument();
+			expect(lightButton).toBeInTheDocument();
+			expect(darkButton).toBeInTheDocument();
 		});
 
 		it('has proper accessibility attributes', () => {
-			const { getByLabelText } = render(ThemeToggle);
-			const select = getByLabelText('Theme:');
+			const { getByTitle } = render(ThemeToggle);
 
-			expect(select).toBeInTheDocument();
-			expect(select.id).toBe('theme-select');
+			const autoButton = getByTitle('Auto theme');
+			const lightButton = getByTitle('Light theme');
+			const darkButton = getByTitle('Dark theme');
+
+			expect(autoButton.title).toBe('Auto theme');
+			expect(lightButton.title).toBe('Light theme');
+			expect(darkButton.title).toBe('Dark theme');
 		});
 	});
 
@@ -126,21 +131,23 @@ describe('ThemeToggle', () => {
 	});
 
 	describe('User Interactions', () => {
-		it('changes select value when user changes theme', async () => {
-			const { getByRole } = render(ThemeToggle);
-			const select = getByRole('combobox') as HTMLSelectElement;
+		it('activates light button when clicked', async () => {
+			const { getByTitle } = render(ThemeToggle);
+			const lightButton = getByTitle('Light theme') as HTMLButtonElement;
+			const autoButton = getByTitle('Auto theme') as HTMLButtonElement;
 
-			await fireEvent.change(select, { target: { value: 'light' } });
+			await fireEvent.click(lightButton);
 			await tick();
 
-			expect(select.value).toBe('light');
+			expect(lightButton.classList.contains('active')).toBe(true);
+			expect(autoButton.classList.contains('active')).toBe(false);
 		});
 
-		it('applies theme class to document when changed', async () => {
-			const { getByRole } = render(ThemeToggle);
-			const select = getByRole('combobox') as HTMLSelectElement;
+		it('applies theme class to document when button clicked', async () => {
+			const { getByTitle } = render(ThemeToggle);
+			const lightButton = getByTitle('Light theme') as HTMLButtonElement;
 
-			await fireEvent.change(select, { target: { value: 'light' } });
+			await fireEvent.click(lightButton);
 			await tick();
 
 			expect(document.documentElement.classList.contains('light')).toBe(true);
@@ -148,10 +155,10 @@ describe('ThemeToggle', () => {
 
 		it('responds to system theme changes when in auto mode', async () => {
 			mediaQueryListMock.matches = false;
-			const { getByRole } = render(ThemeToggle);
-			const select = getByRole('combobox') as HTMLSelectElement;
+			const { getByTitle } = render(ThemeToggle);
+			const autoButton = getByTitle('Auto theme') as HTMLButtonElement;
 
-			expect(select.value).toBe('auto');
+			expect(autoButton.classList.contains('active')).toBe(true);
 			expect(document.documentElement.classList.contains('light')).toBe(true);
 
 			mediaQueryListMock.matches = true;
@@ -171,10 +178,10 @@ describe('ThemeToggle', () => {
 	describe('LocalStorage Integration', () => {
 		it('removes theme from localStorage when changed to auto', async () => {
 			localStorageMock.getItem.mockReturnValue('light');
-			const { getByRole } = render(ThemeToggle);
-			const select = getByRole('combobox') as HTMLSelectElement;
+			const { getByTitle } = render(ThemeToggle);
+			const autoButton = getByTitle('Auto theme') as HTMLButtonElement;
 
-			await fireEvent.change(select, { target: { value: 'auto' } });
+			await fireEvent.click(autoButton);
 
 			expect(localStorageMock.removeItem).toHaveBeenCalledWith('theme');
 		});

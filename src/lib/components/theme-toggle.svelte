@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
+	import SunIcon from '$lib/icons/sun.svelte';
+	import MoonIcon from '$lib/icons/moon.svelte';
+	import SettingsIcon from '$lib/icons/settings.svelte';
 
 	let theme = $state('auto');
 	let mediaQuery: MediaQueryList | null = null;
@@ -50,34 +53,79 @@
 			localStorage.setItem('theme', theme);
 		}
 	});
+
+	function setTheme(newTheme: string) {
+		theme = newTheme;
+	}
 </script>
 
 <div class="theme-toggle">
-	<label for="theme-select">Theme:</label>
-	<select id="theme-select" bind:value={theme}>
-		<option value="auto">System</option>
-		<option value="light">Light</option>
-		<option value="dark">Dark</option>
-	</select>
+	<button
+		type="button"
+		class="theme-button"
+		class:active={theme === 'auto'}
+		onclick={() => setTheme('auto')}
+		title="Auto theme"
+	>
+		<SettingsIcon />
+	</button>
+	<button
+		type="button"
+		class="theme-button"
+		class:active={theme === 'light'}
+		onclick={() => setTheme('light')}
+		title="Light theme"
+	>
+		<SunIcon />
+	</button>
+	<button
+		type="button"
+		class="theme-button"
+		class:active={theme === 'dark'}
+		onclick={() => setTheme('dark')}
+		title="Dark theme"
+	>
+		<MoonIcon />
+	</button>
 </div>
 
 <style>
 	.theme-toggle {
 		display: flex;
+		background: var(--gray-3);
+		border-radius: 9999px;
+		padding: 0.125rem;
+		gap: 0;
+	}
+
+	.theme-button {
+		display: flex;
 		align-items: center;
-		gap: 0.5rem;
-	}
-
-	label {
+		justify-content: center;
+		width: 2rem;
+		height: 2rem;
+		background: transparent;
+		border: none;
+		border-radius: 50%;
 		color: var(--text-secondary);
+		cursor: pointer;
+		transition: all 0.2s ease;
 	}
 
-	select {
-		background: var(--bg-primary);
+	.theme-button:hover {
+		background: var(--gray-4);
+		transform: scale(1.05);
+	}
+
+	.theme-button.active {
+		background: var(--gray-1);
 		color: var(--text-primary);
-		border: 1px solid var(--text-muted);
-		border-radius: 4px;
-		padding: 0.25rem 0.5rem;
-		font-family: inherit;
+		transform: scale(1.05);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	}
+
+	.theme-button :global(svg) {
+		width: 1rem;
+		height: 1rem;
 	}
 </style>

@@ -2,7 +2,12 @@
 	let { text, tagline, socialLinks } = $props<{
 		text: string;
 		tagline?: string;
-		socialLinks?: Array<{ linkText: string; href: string; icon: string }>;
+		socialLinks?: Array<{
+			linkText: string;
+			href: string;
+			icon?: string;
+			iconComponent?: import('svelte').Component;
+		}>;
 	}>();
 	import LinkWithIcon from './link-with-icon.svelte';
 </script>
@@ -13,10 +18,15 @@
 		<p class="tagline text-secondary font-mono">{tagline}</p>
 	{/if}
 	{#if socialLinks}
-		<div class="social-links flex justify-center gap-xl flex-wrap">
+		<div class="social-links flex justify-center gap-xl flex-wrap font-mono">
 			{#each socialLinks as link (link.href)}
 				<div>
-					<LinkWithIcon linkText={link.linkText} href={link.href} icon={link.icon} />
+					<LinkWithIcon
+						linkText={link.linkText}
+						href={link.href}
+						icon={link.icon}
+						iconComponent={link.iconComponent}
+					/>
 				</div>
 			{/each}
 		</div>
@@ -26,7 +36,7 @@
 <style>
 	.heading {
 		margin-bottom: 3rem;
-		margin-top: 3rem;
+		margin-top: 2.5rem;
 		text-align: center;
 	}
 
@@ -40,7 +50,7 @@
 	}
 
 	.tagline {
-		font-size: 1.125rem;
+		font-size: 1.25rem;
 		text-align: center;
 	}
 

@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, readdirSync, statSync } from 'fs';
+import { readFileSync, writeFileSync, statSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { exec } from 'child_process';
@@ -113,7 +113,6 @@ async function main() {
 		);
 		process.exit(1);
 	}
-
 
 	// Check if fonts directory exists in build
 	try {

@@ -1,6 +1,10 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+	import ogpImage from '$lib/assets/ogp-image.png';
+	import GitBranchIcon from '$lib/icons/git-branch.svelte';
 	import ThemeToggle from '$lib/components/theme-toggle.svelte';
+	import LinkWithIcon from '$lib/components/link-with-icon.svelte';
+	import { buildInfo } from '$lib/utils/build-info.js';
 	import '@radix-ui/colors/gray.css';
 	import '@radix-ui/colors/gray-dark.css';
 	import '../app.css';
@@ -12,13 +16,36 @@
 	<title>Alexander Neville</title>
 	<meta name="description" content="Alexander Neville's Personal Site" />
 	<meta name="author" content="Alexander Neville" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://afneville.com/" />
+	<meta property="og:title" content="Alexander Neville" />
+	<meta property="og:description" content="Software / Systems / Infrastructure Engineer" />
+	<meta property="og:image" content={ogpImage} />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://afneville.com/" />
+	<meta property="twitter:title" content="Alexander Neville" />
+	<meta property="twitter:description" content="Software / Systems / Infrastructure Engineer" />
+	<meta property="twitter:image" content={ogpImage} />
 </svelte:head>
 
 <main>
 	{@render children?.()}
 </main>
 
-<footer class="flex justify-center items-center">
+<footer class="flex justify-center items-center gap-lg flex-wrap font-mono">
+	{#if buildInfo.shortCommitHash}
+		<LinkWithIcon
+			linkText={buildInfo.shortCommitHash}
+			href={`https://github.com/${buildInfo.githubRepo}/commit/${buildInfo.commitHash}`}
+			iconComponent={GitBranchIcon}
+			noUnderline={true}
+			iconSize="1.25rem"
+		/>
+	{/if}
 	<ThemeToggle />
 </footer>
 

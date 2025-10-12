@@ -27,7 +27,7 @@
 		<h3>{role}</h3>
 	</div>
 	<div
-		class="employment-info text-secondary font-sans flex justify-between items-start flex-wrap mb-sm indent-xs gap-lg"
+		class="employment-info text-secondary flex justify-between items-start flex-wrap mb-sm indent-xs gap-lg"
 	>
 		<div class="flex flex-wrap gap-lg">
 			<span>{company}</span>
@@ -37,11 +37,9 @@
 		<div>{dates}</div>
 	</div>
 	<p class="mb-sm">{description}</p>
-	<div class="skills text-secondary font-sans flex flex-wrap gap-sm indent-xs">
-		{#each skills as skill, index (skill)}
-			<span
-				>{skill}{#if index < skills.length - 1}&nbsp;·{/if}</span
-			>
+	<div class="skills text-secondary flex flex-wrap gap-lg indent-xs">
+		{#each skills as skill (skill)}
+			<span>{skill}</span>
 		{/each}
 	</div>
 </div>
