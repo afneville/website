@@ -36,7 +36,7 @@
 		</div>
 		<div>{dates}</div>
 	</div>
-	<p class="mb-sm">{description}</p>
+	<p>{description}</p>
 	<div class="skills text-secondary flex flex-wrap gap-lg indent-xs">
 		{#each skills as skill (skill)}
 			<span>{skill}</span>
